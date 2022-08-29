@@ -9,8 +9,6 @@ const header = document.querySelector('header');
 const conMain = document.querySelector('.ly-contents__main');
 const dim = document.querySelectorAll('.dim');
 
-// const getItem = JSON.parse(localStorage.getItem('item'));
-
 // 헤더 고정
 function headerFixed() {
   const checkPoint = conMain.getBoundingClientRect().top;
@@ -45,15 +43,18 @@ function tabEvtHandler() {
   });
 }
 
+const getItem = JSON.parse(localStorage.getItem('item'));
 function loadItem() {
   return fetch('../data/item.json') //
     .then((response) => response.json())
     .then((json) => json.items);
 }
 
-function displayItems(items) {
+function displayItems(getItem) {
   const sorContainer = document.querySelector('.sort-area__contents');
-  sorContainer.innerHTML = items.map((item) => createHtmlString(item)).join('');
+  sorContainer.innerHTML = getItem
+    .map((item) => createHtmlString(item))
+    .join('');
 }
 
 function createHtmlString(item) {
@@ -71,7 +72,7 @@ function createHtmlString(item) {
     `;
 }
 
-function onButtonClick(event, items) {
+function onButtonClick(event, getItem) {
   const dataset = event.target.dataset;
   const key = dataset.type;
   const value = dataset.value;
@@ -80,7 +81,7 @@ function onButtonClick(event, items) {
     return;
   }
 
-  const filtered = items.filter((item) => item[key] === value);
+  const filtered = getItem.filter((item) => item[key] === value);
   displayItems(filtered);
   // updateItem(items, key, value);
 }
@@ -95,8 +96,7 @@ function onButtonClick(event, items) {
 //   });
 // }
 
-function setEventListener(items) {
-  console.log(items);
+function setEventListener(getItem) {
   const sortBtn = document.querySelectorAll('.sort__btn');
 
   sortBtn.forEach((el) => {
@@ -180,11 +180,11 @@ function bindEvtHandler(el) {
 function init() {
   tabEvtHandler();
   formSubmitData();
-  loadItem() //
-    .then((items) => {
-      displayItems(items);
-      setEventListener(items);
-    });
+  // loadItem() //
+  //   .then((items) => {
+  //     displayItems(items);
+  //     setEventListener(items);
+  //   });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
