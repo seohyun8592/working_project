@@ -327,26 +327,39 @@ button {
 }
 
 .ly-wrap .tab-area__btn li {
+  position: relative;
   text-align: center;
+  padding: 0.625rem 0;
 }
 
-.ly-wrap .tab-area__btn li.on .tab__btn {
-  color: #ffffff;
+.ly-wrap .tab-area__btn li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.125rem;
   background-color: #a2dcc7;
+  -webkit-transition: width 0.3s ease-in;
+  transition: width 0.3s ease-in;
+}
+
+.ly-wrap .tab-area__btn li.on::after {
+  width: 100%;
 }
 
 .ly-wrap .tab-area__btn li + li {
-  margin-left: 0.625rem;
+  margin-left: 1.875rem;
 }
 
 .ly-wrap .tab-area__btn.nav {
   border-top: 0.0625rem solid #dddddd;
   border-bottom: 0.0625rem solid #dddddd;
-  padding: 0.625rem 0;
 }
 
 .ly-wrap .tab-area__contents {
-  margin: 5rem 0;
+  margin: 1.875rem 0;
+  padding: 0 3%;
 }
 
 .ly-wrap .tab-area__contents .tab-area__contents {
@@ -362,36 +375,6 @@ button {
   background-color: #ffffff;
   border-radius: 5px;
   padding: 0 0.625rem;
-}
-
-.ly-wrap .tab__contents .contents {
-  width: calc(100% / 3);
-  text-align: left;
-  margin-right: 1%;
-  margin-bottom: 0.9375rem;
-  overflow: hidden;
-}
-
-.ly-wrap .tab__contents .contents .img-area {
-  height: 20.625rem;
-  padding: 0.625rem;
-  background-color: #dddddd;
-}
-
-.ly-wrap .tab__contents .contents .img-area img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center 0;
-     object-position: center 0;
-}
-
-.ly-wrap .tab__contents .contents .title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  text-align: left;
-  margin-top: 0.625rem;
 }
 
 .ly-wrap .tab__contents .view__btn {
@@ -414,6 +397,89 @@ button {
 .ly-wrap .tab__contents .view__btn:hover {
   color: #fff;
   background-color: #67c2a2;
+}
+
+.ly-wrap .sort-area__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ly-wrap .sort-area__btn li {
+  height: 1.875rem;
+  color: #222222;
+  line-height: 1.875rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 0 0.625rem;
+  cursor: pointer;
+}
+
+.ly-wrap .sort-area__btn li.on {
+  color: #ffffff;
+  background-color: #a2dcc7;
+}
+
+.ly-wrap .sort-area__contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 1.5625rem;
+}
+
+.ly-wrap .sort__btn {
+  cursor: pointer;
+}
+
+.ly-wrap .sort__contents {
+  width: calc((100% / 3) - 1%);
+  min-width: 15.625rem;
+  min-height: 15.625rem;
+  text-align: left;
+  margin-right: 1%;
+  margin-bottom: 0.9375rem;
+  overflow: hidden;
+}
+
+.ly-wrap .sort__contents .img-area {
+  height: 20.625rem;
+  padding: 0.625rem;
+  background-color: #dddddd;
+}
+
+.ly-wrap .sort__contents .img-area img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 0;
+     object-position: center 0;
+}
+
+.ly-wrap .sort__contents h4.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 0.625rem;
+  margin-bottom: 0;
+}
+
+.ly-wrap .sort__contents:last-child {
+  margin-right: 0;
 }
 
 .ly-contents__wrap {
@@ -575,6 +641,10 @@ button {
   transition-property: none;
 }
 
+.msg-area textarea {
+  border: 0.0625rem solid #dddddd;
+}
+
 @media (max-width: 1024px) {
   .ly-contents__section {
     padding: 0 5%;
@@ -596,20 +666,23 @@ button {
   .ly-wrap .ly-footer {
     padding: 1.25rem 5%;
   }
+  .ly-wrap .sort__contents {
+    width: 49%;
+  }
 }
 
 @media (max-width: 850px) {
   .gnb {
     display: none;
   }
-  .ly-contents__section .contents-area .tab-area__btn li + li {
-    margin-left: 0;
-  }
   .ly-contents__section .contents-area .tab__contents .img-area {
     height: 18.75rem;
   }
   .ly-wrap .skills-area .skill-name:hover {
     top: 0;
+  }
+  .ly-wrap .sort__contents {
+    width: 100%;
   }
 }
 
