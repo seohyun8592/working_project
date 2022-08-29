@@ -344,8 +344,9 @@ button {
   transition: width 0.3s ease-in;
 }
 
-.ly-wrap .tab-area__btn li.on::after {
-  width: 100%;
+.ly-wrap .tab-area__btn li.on .tab__btn {
+  color: #ffffff;
+  background-color: #a2dcc7;
 }
 
 .ly-wrap .tab-area__btn li + li {
@@ -355,6 +356,15 @@ button {
 .ly-wrap .tab-area__btn.nav {
   border-top: 0.0625rem solid #dddddd;
   border-bottom: 0.0625rem solid #dddddd;
+}
+
+.ly-wrap .tab-area__btn.nav li.on::after {
+  width: 100%;
+}
+
+.ly-wrap .tab-area__btn.nav li.on .tab__btn {
+  color: #222222;
+  background-color: #ffffff;
 }
 
 .ly-wrap .tab-area__contents {
@@ -377,6 +387,68 @@ button {
   padding: 0 0.625rem;
 }
 
+.ly-wrap .tab__contents .contents__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 1.5625rem;
+}
+
+.ly-wrap .tab__contents .contents__wrap .contents {
+  position: relative;
+  width: calc((100% / 3) - 1%);
+  min-width: 15.625rem;
+  min-height: 15.625rem;
+  text-align: left;
+  margin-right: 1%;
+  margin-bottom: 0.9375rem;
+  overflow: hidden;
+}
+
+.ly-wrap .tab__contents .contents__wrap .contents .img-area {
+  height: 20.625rem;
+  padding: 0.625rem;
+  background-color: #dddddd;
+}
+
+.ly-wrap .tab__contents .contents__wrap .contents .img-area img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 0;
+     object-position: center 0;
+}
+
+.ly-wrap .tab__contents .contents__wrap .contents h4.title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: left;
+  margin-top: 0.625rem;
+  margin-bottom: 0;
+}
+
+.ly-wrap .tab__contents .contents__wrap .contents a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ly-wrap .tab__contents .contents__wrap .contents:last-child {
+  margin-right: 0;
+}
+
 .ly-wrap .tab__contents .view__btn {
   position: relative;
   display: block;
@@ -397,6 +469,10 @@ button {
 .ly-wrap .tab__contents .view__btn:hover {
   color: #fff;
   background-color: #67c2a2;
+}
+
+.ly-wrap .tab__contents.on {
+  display: block;
 }
 
 .ly-wrap .sort-area__btn {
