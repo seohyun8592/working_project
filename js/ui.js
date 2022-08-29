@@ -9,6 +9,8 @@ const header = document.querySelector('header');
 const conMain = document.querySelector('.ly-contents__main');
 const dim = document.querySelectorAll('.dim');
 
+// const getItem = JSON.parse(localStorage.getItem('item'));
+
 // 헤더 고정
 function headerFixed() {
   const checkPoint = conMain.getBoundingClientRect().top;
@@ -23,20 +25,97 @@ function headerFixed() {
 
 // 탭
 function tabEvtHandler() {
-  const tabBtn = document.querySelectorAll('.tab__btn');
-  const tabCon = document.querySelectorAll('.tab__contents');
-  tabBtn.forEach((el, i) => {
-    el.addEventListener(CLICK, () => {
-      for (let z = 0; z < tabBtn.length; z++) {
-        tabBtn[z].parentElement.classList.remove(ON);
-        tabCon[z].classList.remove(ON);
-      }
-      el.parentElement.classList.add(ON);
-      tabCon[i].classList.add(ON);
+  const tabArea = document.querySelectorAll('.tab-area');
+
+  tabArea.forEach((el, i) => {
+    const tabBtnWap = el.querySelector('.tab-area__btn');
+    const tabConWrap = el.querySelector('.tab-area__contents');
+    const tabBtn = tabBtnWap.querySelectorAll('.tab__btn');
+    tabBtn.forEach((btn, idx) => {
+      btn.addEventListener(CLICK, () => {
+        console.log(el);
+        for (let z = 0; z < tabBtn.length; z++) {
+          tabBtn[z].parentElement.classList.remove(ON);
+          tabConWrap.children[z].classList.remove(ON);
+        }
+        btn.parentElement.classList.add(ON);
+        tabConWrap.children[idx].classList.add(ON);
+      });
     });
   });
 }
 
+function loadItem() {
+  return fetch('../data/item.json') //
+    .then((response) => response.json())
+    .then((json) => json.items);
+}
+
+function displayItems(items) {
+  const sorContainer = document.querySelector('.sort-area__contents');
+  sorContainer.innerHTML = items.map((item) => createHtmlString(item)).join('');
+}
+
+function createHtmlString(item) {
+  return `
+        <div class="sort__contents" data-value= "${item.type}">
+            <div class="img-area">
+              <img src="${item.img}" alt="${item.title}" />
+            </div>
+            <h4 class="title">${item.title}</h4>
+            <a
+              href="${item.src}"
+              target="_blank"
+            ></a>
+        </div>
+    `;
+}
+
+function onButtonClick(event, items) {
+  const dataset = event.target.dataset;
+  const key = dataset.type;
+  const value = dataset.value;
+
+  if (!key === null || !value === null) {
+    return;
+  }
+
+  const filtered = items.filter((item) => item[key] === value);
+  displayItems(filtered);
+  // updateItem(items, key, value);
+}
+
+// function updateItem(items, key, value) {
+//   items.filter((item) => {
+//     if (item[key] === value) {
+//       item.classList.add('visivle');
+//     } else {
+//       item.classList.remove('visivle');
+//     }
+//   });
+// }
+
+function setEventListener(items) {
+  console.log(items);
+  const sortBtn = document.querySelectorAll('.sort__btn');
+
+  sortBtn.forEach((el) => {
+    const allBtn = el.classList.contains('sort__btn--all');
+
+    el.addEventListener(CLICK, (event) => {
+      sortBtn.forEach((e) => {
+        e.classList.remove(ON);
+      });
+      el.classList.add(ON);
+
+      if (allBtn) {
+        displayItems(items);
+      } else {
+        onButtonClick(event, items);
+      }
+    });
+  });
+}
 function formSubmitData() {
   const formSubmit = document.querySelector('.form-submit');
   const txtArea = document.querySelector('#txtArea');
@@ -101,6 +180,11 @@ function bindEvtHandler(el) {
 function init() {
   tabEvtHandler();
   formSubmitData();
+  loadItem() //
+    .then((items) => {
+      displayItems(items);
+      setEventListener(items);
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
