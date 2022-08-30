@@ -256,7 +256,7 @@ button {
 .ly-wrap header.on {
   top: 0;
   padding: 0.4375rem 0;
-  background-color: #a2dcc7;
+  background-color: #00203f;
 }
 
 .ly-header {
@@ -276,7 +276,7 @@ button {
 .ly-header__logo {
   height: 3.5rem;
   line-height: 3.5rem;
-  color: #fff;
+  color: #adefd1;
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -294,7 +294,7 @@ button {
   width: 100%;
   display: block;
   line-height: 56px;
-  color: #fff;
+  color: #adefd1;
   font-size: 14px;
   font-weight: 700;
   padding-left: 20px;
@@ -339,14 +339,14 @@ button {
   bottom: 0;
   width: 0;
   height: 0.125rem;
-  background-color: #a2dcc7;
+  background-color: #00203f;
   -webkit-transition: width 0.3s ease-in;
   transition: width 0.3s ease-in;
 }
 
 .ly-wrap .tab-area__btn li.on .tab__btn {
   color: #ffffff;
-  background-color: #a2dcc7;
+  background-color: #00203f;
 }
 
 .ly-wrap .tab-area__btn li + li {
@@ -354,8 +354,8 @@ button {
 }
 
 .ly-wrap .tab-area__btn.nav {
-  border-top: 0.0625rem solid #dddddd;
-  border-bottom: 0.0625rem solid #dddddd;
+  border-top: 0.0625rem solid #00203f;
+  border-bottom: 0.0625rem solid #00203f;
 }
 
 .ly-wrap .tab-area__btn.nav li.on::after {
@@ -364,12 +364,11 @@ button {
 
 .ly-wrap .tab-area__btn.nav li.on .tab__btn {
   color: #222222;
-  background-color: #ffffff;
+  background-color: #adefd1;
 }
 
 .ly-wrap .tab-area__contents {
   margin: 1.875rem 0;
-  padding: 0 3%;
 }
 
 .ly-wrap .tab-area__contents .tab-area__contents {
@@ -380,9 +379,9 @@ button {
   height: 1.875rem;
   font-size: 19px;
   font-weight: 700;
-  color: #222222;
+  color: #00203f;
   line-height: 1.875rem;
-  background-color: #ffffff;
+  background-color: #adefd1;
   border-radius: 5px;
   padding: 0 0.625rem;
 }
@@ -400,53 +399,6 @@ button {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-top: 1.5625rem;
-}
-
-.ly-wrap .tab__contents .contents__wrap .contents {
-  position: relative;
-  width: calc((100% / 3) - 1%);
-  min-width: 15.625rem;
-  min-height: 15.625rem;
-  text-align: left;
-  margin-right: 1%;
-  margin-bottom: 0.9375rem;
-  overflow: hidden;
-}
-
-.ly-wrap .tab__contents .contents__wrap .contents .img-area {
-  height: 20.625rem;
-  padding: 0.625rem;
-  background-color: #dddddd;
-}
-
-.ly-wrap .tab__contents .contents__wrap .contents .img-area img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center 0;
-     object-position: center 0;
-}
-
-.ly-wrap .tab__contents .contents__wrap .contents h4.title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  text-align: left;
-  margin-top: 0.625rem;
-  margin-bottom: 0;
-}
-
-.ly-wrap .tab__contents .contents__wrap .contents a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.ly-wrap .tab__contents .contents__wrap .contents:last-child {
-  margin-right: 0;
 }
 
 .ly-wrap .tab__contents .view__btn {
@@ -491,18 +443,22 @@ button {
   height: 1.875rem;
   color: #222222;
   line-height: 1.875rem;
-  background-color: #ffffff;
+  background-color: #adefd1;
   border-radius: 5px;
   padding: 0 0.625rem;
   cursor: pointer;
 }
 
 .ly-wrap .sort-area__btn li.on {
-  color: #ffffff;
-  background-color: #a2dcc7;
+  color: #adefd1;
+  background-color: #00203f;
 }
 
-.ly-wrap .sort-area__contents {
+.ly-wrap .sort__btn {
+  cursor: pointer;
+}
+
+.ly-wrap .sort__contents {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -514,27 +470,27 @@ button {
           justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 100%;
   margin-top: 1.5625rem;
+  padding: 0 3%;
 }
 
-.ly-wrap .sort__btn {
-  cursor: pointer;
-}
-
-.ly-wrap .sort__contents {
-  width: calc((100% / 3) - 1%);
-  min-width: 15.625rem;
-  min-height: 15.625rem;
+.ly-wrap .sort__contents .contents {
+  display: none;
+  width: calc((99% / 3) - 1%);
   text-align: left;
-  margin-right: 1%;
+  margin-left: 1%;
   margin-bottom: 0.9375rem;
+  padding: 0.625rem;
   overflow: hidden;
 }
 
+.ly-wrap .sort__contents .contents.on {
+  display: block;
+}
+
 .ly-wrap .sort__contents .img-area {
-  height: 20.625rem;
-  padding: 0.625rem;
-  background-color: #dddddd;
+  height: 18.75rem;
 }
 
 .ly-wrap .sort__contents .img-area img {
@@ -611,7 +567,7 @@ button {
   font-size: 3.25rem;
   font-weight: 600;
   line-height: 1.1;
-  color: #ffffff;
+  color: #00203f;
   margin-bottom: 1.25rem;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
@@ -619,12 +575,12 @@ button {
 
 .ly-contents__visual .txt-area h2 span {
   display: inline-block;
-  color: #67c2a2;
+  color: #adefd1;
 }
 
 .ly-contents__visual .txt-area p {
   line-height: 1.6875rem;
-  color: #ffffff;
+  color: #adefd1;
   letter-spacing: 0.03125rem;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
@@ -641,7 +597,7 @@ button {
 .ly-contents__main {
   position: relative;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #adefd1;
   padding: 6.25rem 0;
   z-index: 10;
 }
@@ -654,7 +610,7 @@ button {
 .ly-contents__section .contents-area .title {
   font-size: 3rem;
   text-align: center;
-  color: #222222;
+  color: #00203f;
   margin-bottom: 4.375rem;
 }
 
@@ -739,11 +695,11 @@ button {
   .ly-contents__section .contents-area .tab__contents .view__btn {
     margin-top: 1.25rem;
   }
+  .ly-wrap .sort__contents .img-area {
+    height: 12.5rem;
+  }
   .ly-wrap .ly-footer {
     padding: 1.25rem 5%;
-  }
-  .ly-wrap .sort__contents {
-    width: 49%;
   }
 }
 
@@ -751,18 +707,21 @@ button {
   .gnb {
     display: none;
   }
-  .ly-contents__section .contents-area .tab__contents .img-area {
-    height: 18.75rem;
-  }
   .ly-wrap .skills-area .skill-name:hover {
     top: 0;
   }
   .ly-wrap .sort__contents {
     width: 100%;
   }
-}
-
-@media (max-width: 850px) {
+  .ly-wrap .sort__contents .contents {
+    width: 49%;
+  }
+  .ly-wrap .sort__contents .img-area {
+    height: 10rem;
+  }
+  .ly-wrap .sort__contents h4.title {
+    font-size: 1rem;
+  }
   .ly-wrap .ly-footer {
     display: block;
   }
@@ -952,7 +911,7 @@ button {
 }
 
 footer {
-  background-color: #c8d9d3;
+  background-color: #00203f;
 }
 
 .ly-footer {
@@ -968,7 +927,7 @@ footer {
   max-width: 85.375rem;
   margin: 0 auto;
   font-size: 0.875rem;
-  color: #ffffff;
+  color: #adefd1;
   padding: 1.25rem 3%;
 }
 
