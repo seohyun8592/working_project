@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="./vender/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="css/ui.css" />
     <script type="text" src="./data/item.json"></script>
-
     <script src="./js/jquery-1.8.0.min.js"></script>
     <script src="./vender/swiper/swiper-bundle.js"></script>
     <script src="js/ui.js" defer></script>
@@ -99,127 +98,75 @@
                   </div>
                   <div class="tab-area__contents">
                     <div class="tab__contents on">
-                      <div class="tab-area">
-                        <ul class="tab-area__btn">
-                          <li class="on">
-                            <span class="tab__btn">All</span>
-                          </li>
+                      <div class="sort-area">
+                        <ul class="sort-area__btn">
+                          <li class="sort__btn sort__btn--all on">All</li>
 
-                          <li>
-                            <span class="tab__btn">Pc</span>
-                          </li>
+                          <li class="sort__btn" data-type="media">Media</li>
 
-                          <li>
-                            <span class="tab__btn">Mobile</span>
-                          </li>
+                          <li class="sort__btn" data-type="pc">Pc</li>
 
-                          <li>
-                            <span class="tab__btn">Mobile</span>
-                          </li>
+                          <li class="sort__btn" data-type="mobile">Mobile</li>
                         </ul>
 
-                        <div class="tab-area__contents">
-                          <div class="tab__contents on">
-                            <div class="contents__wrap">
-                              <div class="contents">
-                                <div class="img-area">
-                                  <img src="images/works/carrot.png" alt="" />
-                                </div>
-                                <h4 class="title">당근을 찾아라!</h4>
-                                <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                ></a>
+                        <div class="sort-area__contents">
+                          <div class="sort__contents">
+                            <div class="contents" data-type="pc">
+                              <div class="img-area">
+                                <img src="images/works/carrot.png" alt="" />
                               </div>
-
-                              <div class="contents">
+                              <h4 class="title">당근을 찾아라!</h4>
+                              <a
+                                href="works/carrot/carrot_game.html"
+                                target="_blank"
+                              ></a>
+                            </div>
+                            <div class="contents on" data-type="media">
+                              <a href="works/gaon/gaon.html" target="_blank">
                                 <div class="img-area">
                                   <img src="images/works/gaon.png" alt="" />
                                 </div>
                                 <h4 class="title">가온스튜디오</h4>
-                                <a
-                                  href="works/gaon/gaon.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
+                              </a>
+                            </div>
 
-                              <div class="contents">
+                            <div class="contents on" data-type="media">
+                              <a href="works/tforu/tforu.html" target="_blank">
                                 <div class="img-area">
                                   <img src="images/works/tforu.png" alt="" />
                                 </div>
                                 <h4 class="title">티포유</h4>
-                                <a
-                                  href="works/tforu/tforu.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
+                              </a>
                             </div>
-                          </div>
 
-                          <div class="tab__contents">
-                            <div class="contents__wrap">
-                              <div class="contents">
+                            <div class="contents on" data-type="mobile">
+                              <a
+                                href="works/carrot/carrot_game.html"
+                                target="_blank"
+                              >
                                 <div class="img-area">
                                   <img src="images/works/carrot.png" alt="" />
                                 </div>
                                 <h4 class="title">당근을 찾아라!</h4>
-                                <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
+                              </a>
                             </div>
-                          </div>
 
-                          <div class="tab__contents">
-                            <div class="contents__wrap">
-                              <div class="contents">
-                                <div class="img-area">
-                                  <img src="images/works/carrot.png" alt="" />
-                                </div>
-                                <h4 class="title">당근을 찾아라!</h4>
-                                <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
-
-                              <div class="contents">
-                                <div class="img-area">
-                                  <img src="images/works/tforu.png" alt="" />
-                                </div>
-                                <h4 class="title">티포유</h4>
-                                <a
-                                  href="works/tforu/tforu.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="tab__contents">
-                            <div class="contents__wrap">
-                              <div class="contents">
-                                <div class="img-area">
-                                  <img src="images/works/carrot.png" alt="" />
-                                </div>
-                                <h4 class="title">당근을 찾아라!</h4>
-                                <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
-
-                              <div class="contents">
+                            <div class="contents on" data-type="mobile">
+                              <a href="works/gaon/gaon.html" target="_blank">
                                 <div class="img-area">
                                   <img src="images/works/gaon.png" alt="" />
                                 </div>
                                 <h4 class="title">가온스튜디오</h4>
-                                <a
-                                  href="works/gaon/gaon.html"
-                                  target="_blank"
-                                ></a>
-                              </div>
+                              </a>
+                            </div>
+
+                            <div class="contents on" data-type="pc">
+                              <a href="works/tforu/tforu.html" target="_blank">
+                                <div class="img-area">
+                                  <img src="images/works/tforu.png" alt="" />
+                                </div>
+                                <h4 class="title">티포유</h4>
+                              </a>
                             </div>
                           </div>
                         </div>

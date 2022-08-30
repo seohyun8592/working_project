@@ -31,7 +31,6 @@ function tabEvtHandler() {
     const tabBtn = tabBtnWap.querySelectorAll('.tab__btn');
     tabBtn.forEach((btn, idx) => {
       btn.addEventListener(CLICK, () => {
-        console.log(el);
         for (let z = 0; z < tabBtn.length; z++) {
           tabBtn[z].parentElement.classList.remove(ON);
           tabConWrap.children[z].classList.remove(ON);
@@ -43,79 +42,47 @@ function tabEvtHandler() {
   });
 }
 
-const getItem = JSON.parse(localStorage.getItem('item'));
-function loadItem() {
-  return fetch('../data/item.json') //
-    .then((response) => response.json())
-    .then((json) => json.items);
-}
+function onButtonClick(event) {
+  const items = document.querySelectorAll('.sort__contents .contents');
+  const key = event.target.dataset.type;
+  const arr = [];
 
-function displayItems(getItem) {
-  const sorContainer = document.querySelector('.sort-area__contents');
-  sorContainer.innerHTML = getItem
-    .map((item) => createHtmlString(item))
-    .join('');
-}
-
-function createHtmlString(item) {
-  return `
-        <div class="sort__contents" data-value= "${item.type}">
-            <div class="img-area">
-              <img src="${item.img}" alt="${item.title}" />
-            </div>
-            <h4 class="title">${item.title}</h4>
-            <a
-              href="${item.src}"
-              target="_blank"
-            ></a>
-        </div>
-    `;
-}
-
-function onButtonClick(event, getItem) {
-  const dataset = event.target.dataset;
-  const key = dataset.type;
-  const value = dataset.value;
-
-  if (!key === null || !value === null) {
+  if (!key === null) {
     return;
   }
 
-  const filtered = getItem.filter((item) => item[key] === value);
-  displayItems(filtered);
-  // updateItem(items, key, value);
+  items.forEach((z) => {
+    const allBtn = document.querySelector('.sort__btn--all');
+    allBtn.addEventListener(CLICK, (event) => {
+      z.classList.add(ON);
+    });
+    z.classList.remove(ON);
+
+    arr.push(z);
+    const filtered = arr.filter((item) => item.dataset.type === key);
+
+    filtered.forEach((con) => {
+      console.log(z);
+      con.classList.add(ON);
+    });
+  });
 }
 
-// function updateItem(items, key, value) {
-//   items.filter((item) => {
-//     if (item[key] === value) {
-//       item.classList.add('visivle');
-//     } else {
-//       item.classList.remove('visivle');
-//     }
-//   });
-// }
-
-function setEventListener(getItem) {
+function setEventListener() {
   const sortBtn = document.querySelectorAll('.sort__btn');
-
   sortBtn.forEach((el) => {
-    const allBtn = el.classList.contains('sort__btn--all');
-
     el.addEventListener(CLICK, (event) => {
       sortBtn.forEach((e) => {
         e.classList.remove(ON);
       });
       el.classList.add(ON);
 
-      if (allBtn) {
-        displayItems(items);
-      } else {
-        onButtonClick(event, items);
-      }
+      onButtonClick(event);
     });
   });
 }
+setEventListener();
+
 function formSubmitData() {
   const formSubmit = document.querySelector('.form-submit');
   const txtArea = document.querySelector('#txtArea');
@@ -172,19 +139,15 @@ const bindEvt = {
 };
 
 // 이벤트 연결
-function bindEvtHandler(el) {
+function bindEvtHandler() {
   bindEvt.scroll(window, headerFixed);
 }
 
 // init
 function init() {
+  bindEvtHandler();
   tabEvtHandler();
   formSubmitData();
-  // loadItem() //
-  //   .then((items) => {
-  //     displayItems(items);
-  //     setEventListener(items);
-  //   });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
