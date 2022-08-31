@@ -659,7 +659,7 @@ button {
   width: 11.25rem;
   height: 11.25rem;
   border-radius: 50%;
-  background: url("../../images/seo_em01.png") #ffffff no-repeat center center/contain;
+  background: url("../images/seo_em01.png") #ffffff no-repeat center center/contain;
 }
 
 .ly-contents__section#info .contents-area__right {
