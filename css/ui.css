@@ -276,7 +276,7 @@ button {
 .ly-header__logo {
   height: 3.5rem;
   line-height: 3.5rem;
-  color: #adefd1;
+  color: #acc7b4;
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -294,7 +294,7 @@ button {
   width: 100%;
   display: block;
   line-height: 56px;
-  color: #adefd1;
+  color: #acc7b4;
   font-size: 14px;
   font-weight: 700;
   padding-left: 20px;
@@ -312,6 +312,10 @@ button {
 
 .ly-wrap textarea {
   padding: 0.625rem;
+}
+
+.ly-wrap .tab-area {
+  padding-top: 3.25rem;
 }
 
 .ly-wrap .tab-area__btn {
@@ -354,8 +358,12 @@ button {
 }
 
 .ly-wrap .tab-area__btn.nav {
-  border-top: 0.0625rem solid #00203f;
-  border-bottom: 0.0625rem solid #00203f;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  border-top: 0.0625rem solid #00203f33;
+  border-bottom: 0.0625rem solid #00203f33;
 }
 
 .ly-wrap .tab-area__btn.nav li.on::after {
@@ -364,7 +372,7 @@ button {
 
 .ly-wrap .tab-area__btn.nav li.on .tab__btn {
   color: #222222;
-  background-color: #adefd1;
+  background-color: #acc7b4;
 }
 
 .ly-wrap .tab-area__contents {
@@ -381,7 +389,7 @@ button {
   font-weight: 700;
   color: #00203f;
   line-height: 1.875rem;
-  background-color: #adefd1;
+  background-color: #acc7b4;
   border-radius: 5px;
   padding: 0 0.625rem;
 }
@@ -427,6 +435,11 @@ button {
   display: block;
 }
 
+.ly-wrap .sort-area {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .ly-wrap .sort-area__btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -443,14 +456,14 @@ button {
   height: 1.875rem;
   color: #222222;
   line-height: 1.875rem;
-  background-color: #adefd1;
+  background-color: #acc7b4;
   border-radius: 5px;
   padding: 0 0.625rem;
   cursor: pointer;
 }
 
 .ly-wrap .sort-area__btn li.on {
-  color: #adefd1;
+  color: #acc7b4;
   background-color: #00203f;
 }
 
@@ -472,16 +485,14 @@ button {
       flex-wrap: wrap;
   width: 100%;
   margin-top: 1.5625rem;
-  padding: 0 3%;
 }
 
 .ly-wrap .sort__contents .contents {
   display: none;
   width: calc((99% / 3) - 1%);
   text-align: left;
-  margin-left: 1%;
   margin-bottom: 0.9375rem;
-  padding: 0.625rem;
+  margin-right: 1%;
   overflow: hidden;
 }
 
@@ -491,15 +502,6 @@ button {
 
 .ly-wrap .sort__contents .img-area {
   height: 18.75rem;
-}
-
-.ly-wrap .sort__contents .img-area img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center 0;
-     object-position: center 0;
 }
 
 .ly-wrap .sort__contents h4.title {
@@ -512,6 +514,15 @@ button {
 
 .ly-wrap .sort__contents:last-child {
   margin-right: 0;
+}
+
+.ly-wrap .img-area img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center 0;
+     object-position: center 0;
 }
 
 .ly-contents__wrap {
@@ -566,8 +577,9 @@ button {
 .ly-contents__visual .txt-area h2 {
   font-size: 3.25rem;
   font-weight: 600;
-  line-height: 1.1;
   color: #00203f;
+  line-height: 1.1;
+  letter-spacing: -0.125rem;
   margin-bottom: 1.25rem;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
@@ -575,12 +587,12 @@ button {
 
 .ly-contents__visual .txt-area h2 span {
   display: inline-block;
-  color: #adefd1;
+  color: #acc7b4;
 }
 
 .ly-contents__visual .txt-area p {
   line-height: 1.6875rem;
-  color: #adefd1;
+  color: #acc7b4;
   letter-spacing: 0.03125rem;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
@@ -597,13 +609,19 @@ button {
 .ly-contents__main {
   position: relative;
   height: 100%;
-  background-color: #adefd1;
+  background-color: #acc7b4;
   padding: 6.25rem 0;
   z-index: 10;
 }
 
+.ly-contents__section {
+  position: relative;
+}
+
 .ly-contents__section .contents-area {
-  padding: 12.5rem 0 1.25rem;
+  max-width: 85.375rem;
+  margin: 0 auto;
+  padding: 5rem 0 1.25rem;
   overflow: hidden;
 }
 
@@ -616,6 +634,111 @@ button {
 
 .ly-contents__section:first-child .contents-area {
   padding-top: 0;
+}
+
+.ly-contents__section#info .contents-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 5%;
+}
+
+.ly-contents__section#info .contents-area__left {
+  width: 18.75rem;
+  padding: 0 5%;
+}
+
+.ly-contents__section#info .contents-area__left .img-area {
+  display: inline-block;
+  width: 11.25rem;
+  height: 11.25rem;
+  border-radius: 50%;
+  background: url("../../images/seo_em01.png") #ffffff no-repeat center center/contain;
+}
+
+.ly-contents__section#info .contents-area__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 18.75rem);
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-title {
+  padding-bottom: 0.625rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-title h2 span {
+  font-size: 0.875rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-group h3 {
+  position: relative;
+  font-weight: 400;
+  padding-left: 0.75rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-group h3:after {
+  content: '';
+  position: absolute;
+  top: calc(50% + 2px);
+  left: 0;
+  display: block;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  border-radius: 50%;
+  background-color: #00203f;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-group ul {
+  margin-top: 0.625rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-group ul li {
+  font-size: 0.875rem;
+  padding-left: 0.75rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-group ul li + li {
+  margin-top: 0.3125rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont-group + .info__cont {
+  margin-top: 0.9375rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont .skill-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont + .info__cont {
+  margin-left: 4.375rem;
+}
+
+.ly-contents__section#info .contents-area__right .info__cont:first-child {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .dim {
@@ -678,9 +801,6 @@ button {
 }
 
 @media (max-width: 1024px) {
-  .ly-contents__section {
-    padding: 0 5%;
-  }
   .tab__contents {
     display: none;
   }
@@ -698,14 +818,14 @@ button {
   .ly-wrap .sort__contents .img-area {
     height: 12.5rem;
   }
-  .ly-wrap .ly-footer {
-    padding: 1.25rem 5%;
-  }
 }
 
 @media (max-width: 850px) {
   .gnb {
     display: none;
+  }
+  .ly-contents__section {
+    padding: 0;
   }
   .ly-wrap .skills-area .skill-name:hover {
     top: 0;
@@ -725,8 +845,33 @@ button {
   .ly-wrap .ly-footer {
     display: block;
   }
-  .ly-wrap .ly-footer .contact {
-    margin-top: 0.625rem;
+  .ly-contents__section#info .contents-area {
+    display: block;
+    text-align: center;
+  }
+  .ly-contents__section#info .contents-area__right .info__cont-group h3 {
+    display: inline-block;
+  }
+  .ly-contents__section#info .contents-area__left {
+    width: 100%;
+  }
+  .ly-contents__section#info .contents-area__right {
+    display: block;
+    width: 100%;
+  }
+  .ly-contents__section#info
+.contents-area__right
+.info__cont-group
++ .info__cont-group {
+    margin-top: 1.875rem;
+  }
+  .ly-contents__section#info .contents-area__right .info__cont .skill-item {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 1.875rem;
+  }
+  .ly-contents__section#info .contents-area__right .info__cont + .info__cont {
+    margin-left: 0;
   }
 }
 
@@ -926,12 +1071,11 @@ footer {
           justify-content: space-between;
   max-width: 85.375rem;
   margin: 0 auto;
-  font-size: 0.875rem;
-  color: #adefd1;
-  padding: 1.25rem 3%;
-}
-
-.ly-footer ul li + li {
-  margin-top: 0.3125rem;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 0.75rem;
+  color: #acc7b4;
+  text-align: center;
+  padding: 0 5%;
 }
 /*# sourceMappingURL=ui.css.map */
