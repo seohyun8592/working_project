@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./vender/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="css/ui.css" />
+    <link rel="stylesheet" href="./css/ui.css" />
     <script type="text" src="./data/item.json"></script>
-    <script src="./js/jquery-1.8.0.min.js"></script>
-    <script src="./vender/swiper/swiper-bundle.js"></script>
     <script src="js/ui.js" defer></script>
     <title>Kim Seo Hyun</title>
   </head>
@@ -68,20 +65,20 @@
                     <div class="info__cont-group">
                       <h3>Project</h3>
                       <ul>
-                        <li>현) 포스코 ESG성과 데이터 통합관리</li>
-                        <li>현) 포스코 FTA원산지Portal</li>
-                        <li>현) 포스코 steel-n-com</li>
-                        <li>현) 포스코 글로벌표준문서관리시스템</li>
-                        <li>현) 포스코 표준문서관리시스템</li>
-                        <li>현) 포스코 사외도시락</li>
-                        <li>현) 포스코 생산속보</li>
-                        <li>현) 포스코 상태관리시스템</li>
-                        <li>현) 포스코 생산속보</li>
-                        <li>현) 포스코 스마트안전APP</li>
-                        <li>현) 포스코 오픈연구소</li>
-                        <li>현) 포스코 출하속보</li>
-                        <li>현) 포스코 REPOM</li>
-                        <li>현) 포스코 방문자 태깅 모니터링</li>
+                        <li>포스코 ESG성과 데이터 통합관리</li>
+                        <li>포스코 FTA원산지Portal</li>
+                        <li>포스코 steel-n-com</li>
+                        <li>포스코 글로벌표준문서관리시스템</li>
+                        <li>포스코 사외도시락</li>
+                        <li>포스코 생산속보</li>
+                        <li>포스코 상태관리시스템</li>
+                        <li>포스코 스마트안전APP</li>
+                        <li>포스코 오픈연구소</li>
+                        <li>포스코 출하속보</li>
+                        <li>포스코 REPOM</li>
+                        <li>포스코 방문자 태깅 모니터링</li>
+                        <li>가온스튜디오(DAZZLING)</li>
+                        <li>T4U 교사 포털 사이트</li>
                       </ul>
                     </div>
                   </div>
@@ -103,7 +100,7 @@
             <section class="ly-contents__section" id="portfolio">
               <div class="contents-area">
                 <div class="tab-area">
-                  <div class="tab-area__btn nav">
+                  <ul class="tab-area__btn nav">
                     <li class="on">
                       <span class="tab__btn">Web</span>
                     </li>
@@ -114,7 +111,7 @@
                     <li>
                       <span class="tab__btn">contact</span>
                     </li>
-                  </div>
+                  </ul>
                   <div class="tab-area__contents">
                     <div class="tab__contents on">
                       <div class="sort-area">
@@ -130,16 +127,30 @@
 
                         <div class="sort-area__contents">
                           <div class="sort__contents">
+                            <div class="contents on" data-type="media">
+                              <a href="index.html" target="_blank">
+                                <div class="img-area">
+                                  <img
+                                    src="images/works/portfolio.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <h4 class="title">포트폴리오</h4>
+                              </a>
+                            </div>
+
                             <div class="contents on" data-type="pc">
-                              <div class="img-area">
-                                <img src="images/works/carrot.png" alt="" />
-                              </div>
-                              <h4 class="title">당근을 찾아라!</h4>
                               <a
                                 href="works/carrot/carrot_game.html"
                                 target="_blank"
-                              ></a>
+                              >
+                                <div class="img-area">
+                                  <img src="images/works/carrot.png" alt="" />
+                                </div>
+                                <h4 class="title">당근을 찾아라!</h4>
+                              </a>
                             </div>
+
                             <div class="contents on" data-type="media">
                               <a href="works/gaon/gaon.html" target="_blank">
                                 <div class="img-area">
@@ -199,7 +210,7 @@
                           id="txtArea"
                           placeholder="글을 남겨주세요"
                         ></textarea>
-                        <button type="submit" class="form-submit">
+                        <button type="submit" class="btn__submit">
                           보내기
                         </button>
                       </div>
@@ -218,9 +229,7 @@
 
       <footer>
         <div class="ly-footer">
-          <div class="contact">
-            <p>Copyright ⓒ Designed by KimSeoHyun All Rights Reserved</p>
-          </div>
+          <p>Copyright ⓒ Designed by KimSeoHyun All Rights Reserved</p>
         </div>
       </footer>
     </div>
