@@ -133,12 +133,12 @@ section {
 
 html {
   height: 100%;
+  font-family: 'notokr', sans-serif;
 }
 
 body {
   height: 100%;
   min-width: 22.5rem;
-  font-family: 'notokr';
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
@@ -174,6 +174,7 @@ img {
 
 input,
 textarea {
+  font-family: 'notokr', sans-serif;
   width: 100%;
   border: 0;
   outline: none;
@@ -184,6 +185,9 @@ textarea {
 }
 
 button {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -256,7 +260,7 @@ button {
 .ly-wrap header.on {
   top: 0;
   padding: 0.4375rem 0;
-  background-color: #00203f;
+  background-color: #348597;
 }
 
 .ly-header {
@@ -276,7 +280,7 @@ button {
 .ly-header__logo {
   height: 3.5rem;
   line-height: 3.5rem;
-  color: #acc7b4;
+  color: #f3a950;
   font-size: 1.0625rem;
   font-weight: 600;
 }
@@ -294,7 +298,7 @@ button {
   width: 100%;
   display: block;
   line-height: 56px;
-  color: #acc7b4;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 700;
   padding-left: 20px;
@@ -343,14 +347,14 @@ button {
   bottom: 0;
   width: 0;
   height: 0.125rem;
-  background-color: #00203f;
+  background-color: #348597;
   -webkit-transition: width 0.3s ease-in;
   transition: width 0.3s ease-in;
 }
 
 .ly-wrap .tab-area__btn li.on .tab__btn {
   color: #ffffff;
-  background-color: #00203f;
+  background-color: #348597;
 }
 
 .ly-wrap .tab-area__btn li + li {
@@ -372,7 +376,7 @@ button {
 
 .ly-wrap .tab-area__btn.nav li.on .tab__btn {
   color: #222222;
-  background-color: #acc7b4;
+  background-color: #ffffff;
 }
 
 .ly-wrap .tab-area__contents {
@@ -385,13 +389,18 @@ button {
 
 .ly-wrap .tab__btn {
   height: 1.875rem;
-  font-size: 19px;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #00203f;
+  color: #348597;
   line-height: 1.875rem;
-  background-color: #acc7b4;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 0.3125rem;
   padding: 0 0.625rem;
+}
+
+.ly-wrap .tab__contents {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .ly-wrap .tab__contents .contents__wrap {
@@ -435,11 +444,6 @@ button {
   display: block;
 }
 
-.ly-wrap .sort-area {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
 .ly-wrap .sort-area__btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,15 +460,15 @@ button {
   height: 1.875rem;
   color: #222222;
   line-height: 1.875rem;
-  background-color: #acc7b4;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 0.3125rem;
   padding: 0 0.625rem;
   cursor: pointer;
 }
 
 .ly-wrap .sort-area__btn li.on {
-  color: #acc7b4;
-  background-color: #00203f;
+  color: #ffffff;
+  background-color: #348597;
 }
 
 .ly-wrap .sort__btn {
@@ -491,7 +495,7 @@ button {
   display: none;
   width: calc((99% / 3) - 1%);
   text-align: left;
-  margin-bottom: 0.9375rem;
+  margin-bottom: 1.5625rem;
   margin-right: 1%;
   overflow: hidden;
 }
@@ -502,13 +506,14 @@ button {
 
 .ly-wrap .sort__contents .img-area {
   height: 18.75rem;
+  border: 0.0625rem solid #dddddd;
 }
 
 .ly-wrap .sort__contents h4.title {
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 700;
   text-align: left;
-  margin-top: 0.625rem;
+  margin-top: 0.3125rem;
   margin-bottom: 0;
 }
 
@@ -523,6 +528,42 @@ button {
      object-fit: cover;
   -o-object-position: center 0;
      object-position: center 0;
+}
+
+.ly-wrap footer {
+  background-color: #348597;
+}
+
+.ly-wrap footer .ly-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 85.375rem;
+  margin: 0 auto;
+  height: 5rem;
+  font-size: 0.75rem;
+  color: #f3a94f;
+  text-align: center;
+  padding: 0 5%;
+}
+
+.ly-wrap footer .ly-footer p {
+  line-height: 1.2;
+}
+
+.ly-wrap .btn__submit {
+  height: 1.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  border-radius: 0.3125rem;
+  background-color: #348597;
+  padding: 0 0.625rem;
 }
 
 .ly-contents__wrap {
@@ -577,7 +618,7 @@ button {
 .ly-contents__visual .txt-area h2 {
   font-size: 3.25rem;
   font-weight: 600;
-  color: #00203f;
+  color: #ffffff;
   line-height: 1.1;
   letter-spacing: -0.125rem;
   margin-bottom: 1.25rem;
@@ -587,12 +628,12 @@ button {
 
 .ly-contents__visual .txt-area h2 span {
   display: inline-block;
-  color: #acc7b4;
+  color: #ffffff;
 }
 
 .ly-contents__visual .txt-area p {
   line-height: 1.6875rem;
-  color: #acc7b4;
+  color: #ffffff;
   letter-spacing: 0.03125rem;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
@@ -609,7 +650,7 @@ button {
 .ly-contents__main {
   position: relative;
   height: 100%;
-  background-color: #acc7b4;
+  background-color: #ffffff;
   padding: 6.25rem 0;
   z-index: 10;
 }
@@ -628,7 +669,7 @@ button {
 .ly-contents__section .contents-area .title {
   font-size: 3rem;
   text-align: center;
-  color: #00203f;
+  color: #348597;
   margin-bottom: 4.375rem;
 }
 
@@ -679,26 +720,34 @@ button {
   padding-bottom: 0.625rem;
 }
 
+.ly-contents__section#info .contents-area__right .info__cont-title h2 {
+  color: #348597;
+}
+
 .ly-contents__section#info .contents-area__right .info__cont-title h2 span {
   font-size: 0.875rem;
+  font-weight: 400;
+  margin-left: 0.1875rem;
 }
 
 .ly-contents__section#info .contents-area__right .info__cont-group h3 {
   position: relative;
+  font-size: 1.125rem;
   font-weight: 400;
+  color: #348597;
   padding-left: 0.75rem;
 }
 
 .ly-contents__section#info .contents-area__right .info__cont-group h3:after {
   content: '';
   position: absolute;
-  top: calc(50% + 2px);
+  top: calc(50% + 0.125rem);
   left: 0;
   display: block;
   width: 0.4375rem;
   height: 0.4375rem;
   border-radius: 50%;
-  background-color: #00203f;
+  background-color: #f3a94f;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -709,6 +758,7 @@ button {
 
 .ly-contents__section#info .contents-area__right .info__cont-group ul li {
   font-size: 0.875rem;
+  color: #348597;
   padding-left: 0.75rem;
 }
 
@@ -772,31 +822,8 @@ button {
           transform: translate(-50%, -50%);
 }
 
-.swiper-wrappper {
-  position: relative;
-  width: auto;
-  height: auto;
-  z-index: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transition-property: none;
-  transition-property: none;
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-.swiper-slide {
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
-  width: auto;
-  height: auto;
-  position: relative;
-  -webkit-transition-property: none;
-  transition-property: none;
-}
-
 .msg-area textarea {
+  height: 18.75rem;
   border: 0.0625rem solid #dddddd;
 }
 
@@ -835,11 +862,25 @@ button {
 }
 
 @media (max-width: 850px) {
+  .ly-header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ly-contents__section#info .contents-area__right .info__cont-title h2 {
+    font-size: 1.25rem;
+  }
   .gnb {
     display: none;
   }
   .ly-contents__section {
     padding: 0;
+  }
+  .ly-wrap .tab__btn {
+    font-size: 1.125rem;
+  }
+  .ly-wrap .sort__contents {
+    margin-left: 2%;
   }
   .ly-wrap .skills-area .skill-name:hover {
     top: 0;
@@ -848,26 +889,22 @@ button {
     width: 100%;
   }
   .ly-wrap .sort__contents .contents {
-    width: 49%;
+    width: 47%;
+    margin-right: 3%;
   }
   .ly-wrap .sort__contents .img-area {
     height: 10rem;
   }
-  .ly-wrap .sort__contents h4.title {
-    font-size: 1rem;
-  }
-  .ly-wrap .ly-footer {
-    display: block;
-  }
   .ly-contents__section#info .contents-area {
     display: block;
-    text-align: center;
-  }
-  .ly-contents__section#info .contents-area__right .info__cont-group h3 {
-    display: inline-block;
   }
   .ly-contents__section#info .contents-area__right {
     display: block;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .ly-contents__section#info .contents-area__right .info__cont-group h3 {
+    display: inline-block;
   }
   .ly-contents__section#info .contents-area__right .info__cont .skill-item {
     -ms-flex-wrap: wrap;
@@ -876,6 +913,9 @@ button {
   }
   .ly-contents__section#info .contents-area__right .info__cont + .info__cont {
     margin-left: 0;
+  }
+  .msg-area textarea {
+    height: 15.3125rem;
   }
 }
 
@@ -1057,29 +1097,5 @@ button {
       -ms-flex-align: center;
           align-items: center;
   padding: 100px 0;
-}
-
-footer {
-  background-color: #00203f;
-}
-
-.ly-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-width: 85.375rem;
-  margin: 0 auto;
-  height: 5rem;
-  line-height: 5rem;
-  font-size: 0.75rem;
-  color: #acc7b4;
-  text-align: center;
-  padding: 0 5%;
 }
 /*# sourceMappingURL=ui.css.map */
