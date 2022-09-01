@@ -84,7 +84,7 @@ function setEventListener() {
 setEventListener();
 
 function formSubmitData() {
-  const formSubmit = document.querySelector('.form-submit');
+  const formSubmit = document.querySelector('.btn__submit');
   const txtArea = document.querySelector('#txtArea');
 
   if (!formSubmit) {
