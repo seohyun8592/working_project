@@ -1,12 +1,14 @@
 'use strict';
 // string
 const ON = 'on';
+const ACTIVE = 'active';
 const SCROLL = 'scroll';
 const CLICK = 'click';
 
 // element
 const header = document.querySelector('header');
 const conMain = document.querySelector('.ly-contents__main');
+const conArea = document.querySelector('.contents-area');
 const dim = document.querySelectorAll('.dim');
 
 // 헤더 고정
@@ -19,6 +21,19 @@ function headerFixed() {
   } else {
     header.classList.remove(ON);
   }
+}
+
+// 스킬
+function skillPerMove() {
+  const skillPer = document.querySelectorAll('.skill__per');
+  const mainScrT = conArea.getBoundingClientRect().top;
+  skillPer.forEach((el) => {
+    el.style.width = el.dataset.per + '%';
+    let scrT = window.scrollY;
+    if (scrT > mainScrT - 100) {
+      el.classList.add(ACTIVE);
+    }
+  });
 }
 
 // 탭
@@ -141,6 +156,7 @@ const bindEvt = {
 // 이벤트 연결
 function bindEvtHandler() {
   bindEvt.scroll(window, headerFixed);
+  bindEvt.scroll(window, skillPerMove);
 }
 
 // init
