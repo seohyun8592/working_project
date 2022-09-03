@@ -25,12 +25,13 @@ function headerFixed() {
 
 // 스킬
 function skillPerMove() {
+  const skillWrap = document.querySelector('.skill-item');
   const skillPer = document.querySelectorAll('.skill__per');
-  const mainScrT = conArea.getBoundingClientRect().top;
+  const skillWrapScrT = skillWrap.getBoundingClientRect().top;
   skillPer.forEach((el) => {
     el.style.width = el.dataset.per + '%';
     let scrT = window.scrollY;
-    if (scrT > mainScrT - 100) {
+    if (scrT > skillWrapScrT) {
       el.classList.add(ACTIVE);
     }
   });
