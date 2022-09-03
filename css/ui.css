@@ -780,6 +780,7 @@ button {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  height: 1.0625rem;
   font-size: 0.875rem;
   color: #348597;
 }
@@ -886,7 +887,6 @@ button {
     display: block;
   }
   .ly-contents__section .contents-area .tab__contents .img-area {
-    width: 100%;
     margin-top: 1.25rem;
     margin-left: 0;
   }
@@ -957,13 +957,19 @@ button {
   .ly-contents__section#info .contents-area__right .info__cont-group h3 {
     display: inline-block;
   }
+  .ly-contents__section#info .contents-area__right .info__cont .skill {
+    font-size: 0.75rem;
+  }
+  .ly-contents__section#info .contents-area__right .info__cont .skill__bar {
+    height: 0.625rem;
+  }
   .ly-contents__section#info .contents-area__right .info__cont .skill-item {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin-top: 1.875rem;
   }
   .ly-contents__section#info .contents-area__right .info__cont + .info__cont {
-    margin-left: 0;
+    padding-left: 0;
   }
   .msg-area textarea {
     height: 15.3125rem;
