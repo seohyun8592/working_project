@@ -934,11 +934,18 @@ button {
     text-align: center;
   }
   .ly-contents__section#info .contents-area__right {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
     padding-top: 3.125rem;
+    padding-left: 0;
+  }
+  #info .contents-area__right .info__cont {
+    width: auto;
   }
 }
 

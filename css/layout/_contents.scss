@@ -504,9 +504,14 @@
     text-align: center;
   }
   .ly-contents__section#info .contents-area__right {
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding-top: rem(50);
+    padding-left: 0;
+  }
+  #info .contents-area__right .info__cont {
+    width: auto;
   }
 }
 
