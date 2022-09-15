@@ -140,6 +140,62 @@ function closePopUp(id) {
   id.classList.remove(ON);
 }
 
+// visual
+const img = document.querySelector('.ly-contents__visual .img-area img');
+let attr = img.getAttribute('src');
+let seq_play = true;
+let _img_load = 0;
+let _img_count = 192;
+let idx = 0;
+
+function seq_init() {
+  for (idx = 0; idx <= _img_count; idx++) {
+    let _img_tmp = new Image();
+    _img_tmp.src = `images/sequence/sky${idx}.jpg`;
+    _img_tmp.onload = function () {
+      ++_img_load;
+      if (_img_load == _img_count) {
+        rolling();
+      }
+    };
+    // _img_tmp.onerror = function () {
+    //   ++_img_load;
+    //   if (_img_load == _img_count) {
+    //     rolling();
+    //   }
+    // };
+  }
+  idx = 0;
+  rolling();
+}
+function rolling() {
+  const set = setTimeout(function () {
+    if (seq_play) {
+      idx++;
+      img.setAttribute('src', `images/sequence/sky${idx}.jpg`);
+    }
+    if (idx == _img_count) {
+      seq_play = false;
+      idx = 0;
+    }
+    if (!seq_play) {
+      if (idx == 0) seq_play = true;
+    }
+    rolling();
+  }, 100);
+
+  rollingClear(set);
+}
+
+function rollingClear(set) {
+  let scrT = window.scrollY;
+  if (scrT > 0) {
+    clearTimeout(set);
+  }
+}
+
+seq_init();
+
 const bindEvt = {
   scroll: function (el, func) {
     el.addEventListener(SCROLL, () => {
@@ -158,6 +214,7 @@ const bindEvt = {
 function bindEvtHandler() {
   bindEvt.scroll(window, headerFixed);
   bindEvt.scroll(window, skillPerMove);
+  bindEvt.scroll(window, rollingClear);
 }
 
 // init
