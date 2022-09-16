@@ -1,34 +1,36 @@
-// 1-1. Color
-$white: #ffffff;
-$black: #000000;
-$mainColor: #273f5c;
-$subColor: #526f9b;
-$txtGray: #777777;
-$border: #cecece;
-
-// 1-2 Attr
+$ly: ly;
 $rem-base: 16px;
-$headerHeight: 70px;
+$baseColor: #348597;
+$subColor: #ffffff;
+$subTxtColor: #f3a94f;
 
-// 2. Mixin
-// flex
-@mixin onFlex($align: center, $justify: flex-start) {
+@mixin onFlex($align: center, $justify: center) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
 }
 
-// 메인 기본 여백
-@mixin basePad() {
-  padding: 0 rem(40);
+@mixin maxWidth($elW: rem(1200)) {
+  max-width: $elW;
+  margin: 0 auto;
 }
 
-// background
-@mixin background($imgName) {
-  background: url('../img/main/#{$imgName}.JPG') no-repeat 0 center / 100%;
+@keyframes slideIn {
+  0% {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
 }
 
-// 3. Func
+// func
+// @function rem($pxValue, $context: $browser-context) {
+//   @return #{$pxValue/$context}rem;
+// }
+
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }

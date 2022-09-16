@@ -1,123 +1,24 @@
-nav {
-  width: 100%;
+.gnb {
   ul {
-    @include onFlex(flext-start, flex-start);
-    &.gnb {
-      li {
-        position: relative;
-        width: 25%;
-        min-width: rem(125);
-        cursor: pointer;
-        a {
-          display: block;
-          width: 100%;
-          height: rem(50);
-          font-size: rem(14);
-          font-weight: 500;
-          line-height: rem(48);
-          text-align: center;
-          color: #222222;
-          transition: color 0.3s ease-in;
-        }
-
-        & + li {
-          margin-left: rem(25);
-        }
-        &:hover {
-          > a {
-            color: #e75935;
-          }
-        }
-      }
-      &__depth {
-        position: absolute;
-        top: rem(50);
-        left: 0;
-        display: block;
-        visibility: hidden;
+    display: flex;
+    align-items: center;
+    li {
+      a {
         width: 100%;
-        padding-top: rem(20);
-        opacity: 0;
-        transition: opacity 0.3s ease-in;
-        z-index: 10;
-        li {
-          width: 100%;
-          height: auto;
-          text-align: center;
-          margin: 0 auto;
-          & + li {
-            margin-left: 0;
-          }
-          a {
-            height: rem(30);
-            font-size: rem(14);
-            line-height: rem(30);
-          }
-          &:last-child {
-            padding-bottom: rem(10);
-          }
-        }
-      }
-    }
-  }
-  &.on {
-    .gnb__depth {
-      visibility: visible;
-    }
-  }
-  &.mobile {
-    position: absolute;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    background-color: $white;
-    transition: right 0.3s ease-in;
-    ul {
-      &.gnb {
-        position: relative;
         display: block;
-        height: 100%;
-        background-color: $mainColor;
-        // margin-top: rem(70);
-        padding-top: rem(90);
-        li {
-          width: 100%;
-          & + li {
-            margin-left: 0;
-          }
-          a {
-            width: 100%;
-            font-size: rem(20);
-            color: $white;
-            text-align: left;
-            padding: 0 rem(24);
-            box-sizing: content-box;
-          }
+        line-height: 56px;
+        color: $subColor;
+        font-size: 14px;
+        font-weight: 700;
+        padding-left: 20px;
+        transition: color 0.3s ease-in;
+        &:hover {
+          color: #67c2a2;
         }
       }
-      &.gnb__depth {
-        position: relative;
-        top: 0;
-        padding-top: 0;
-        visibility: visible;
-        //  background: #657388a1;
-        padding: 0 rem(24) rem(20);
-        opacity: 1;
-        li {
-          a {
-            height: rem(20);
-            font-size: rem(14);
-            color: #999999;
-            line-height: rem(20);
-            padding-top: 0;
-            padding-left: rem(10);
-          }
-          &:last-child {
-            padding-bottom: 0;
-          }
-          & + li {
-            padding-top: rem(5);
-          }
+      &:first-child {
+        a {
+          padding-left: 0;
         }
       }
     }

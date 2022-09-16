@@ -105,7 +105,6 @@ section {
 html {
   height: 100%;
   font-family: 'notokr', sans-serif;
-  -webkit-tap-highlight-color: transparent;
 
   // overflow-x: hidden;
 }
@@ -115,7 +114,6 @@ body {
   font-size: $rem-base;
   font-weight: 500;
   line-height: 1.2;
-  overflow: auto;
 }
 
 ol,
@@ -123,17 +121,25 @@ ul,
 li {
   list-style: none;
 }
-
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 img {
-  width: 100%;
   vertical-align: top;
 }
-
 input,
 textarea {
   font-family: 'notokr', sans-serif;
@@ -141,20 +147,14 @@ textarea {
   border: 0;
   outline: none;
 }
-
 textarea {
   resize: none;
 }
-
 button {
   border: 0;
   outline: 0;
   background-color: transparent;
   cursor: pointer;
-}
-
-a {
-  color: #222222;
 }
 
 /* TYPOGRAPHY */
