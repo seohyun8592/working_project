@@ -1,33 +1,34 @@
-$ly: ly;
-$rem-base: 16px;
+// 1-1. Color
+$white: #ffffff;
+$black: #000000;
+$mainColor: #273f5c;
+$subColor: #526f9b;
+$txtGray: #777777;
+$border: #cecece;
 
-@mixin onFlex($align: center, $justify: center) {
+// 1-2 Attr
+$rem-base: 16px;
+$headerHeight: 70px;
+
+// 2. Mixin
+// flex
+@mixin onFlex($align: center, $justify: flex-start) {
   display: flex;
   align-items: $align;
   justify-content: $justify;
 }
 
-@mixin maxWidth($elW: rem(1366)) {
-  max-width: $elW;
-  margin: 0 auto;
+// 메인 기본 여백
+@mixin basePad() {
+  padding: 0 rem(40);
 }
 
-@keyframes slideIn {
-  0% {
-    transform: translateY(40%);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0);
-    opacity: 1;
-  }
+// background
+@mixin background($imgName) {
+  background: url('../img/main/#{$imgName}.JPG') no-repeat 0 center / 100%;
 }
 
-// func
-// @function rem($pxValue, $context: $browser-context) {
-//   @return #{$pxValue/$context}rem;
-// }
-
+// 3. Func
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }

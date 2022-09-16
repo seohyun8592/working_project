@@ -1,31 +1,104 @@
-.#{$ly} {
-  &-wrap {
-    header {
-      width: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      transition: all 0.3s ease;
-      z-index: 998;
-      &.on {
-        top: 0;
-        padding: rem(7) 0;
-        background-color: #a2dcc7;
+header {
+  position: fixed;
+  @include onFlex(flex-start, flex-start);
+  width: 100%;
+  height: $headerHeight;
+  background-color: $white;
+  @include basePad();
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  transition: all 0.3s ease-in;
+  z-index: 10;
+  .logo {
+    width: rem(200);
+    min-width: rem(200);
+  }
+  nav {
+    margin-left: 10%;
+    &.mobile {
+      margin-left: 0;
+    }
+  }
+  &.active {
+    background-color: $mainColor;
+    &::after {
+      background-color: #49596d;
+    }
+    // background: linear-gradient($white 70px, #000000);
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: rem(70);
+    //   left: 0;
+    //   display: block;
+    //   width: 100%;
+    //   height: rem(1);
+    //   background-color: $border;
+    // }
+    nav {
+      ul {
+        li {
+          .gnb {
+            &__depth {
+              opacity: 1;
+            }
+          }
+          a {
+            color: $white;
+            &:hover {
+              color: #e75935;
+            }
+          }
+          &:hover {
+            > a {
+              color: #e75935;
+            }
+          }
+        }
       }
     }
   }
-  &-header {
+  &::after {
+    content: '';
+    position: absolute;
+    top: rem(70);
+    left: 0;
+    display: block;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-    &__logo {
-      height: rem(56);
-      line-height: rem(56);
-      color: #fff;
-      font-size: rem(17);
-      font-weight: 600;
+    height: rem(1);
+    background-color: $border;
+  }
+  .header__btn {
+    position: absolute;
+    top: 50%;
+    right: rem(20);
+    display: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 110;
+    span {
+      display: block;
+      width: rem(20);
+      height: rem(2);
+      background-color: $black;
+      transition: all 0.2s ease-in;
+      & + span {
+        margin-top: rem(5);
+      }
+    }
+    &.on {
+      span {
+        background-color: $white;
+        &:first-child {
+          transform: translateY(4px) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          transform: translateY(-10px) rotate(-45deg);
+        }
+      }
     }
   }
 }

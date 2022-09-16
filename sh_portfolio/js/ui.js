@@ -1,108 +1,138 @@
 'use strict';
-// string
+
 const ON = 'on';
-const SCROLL = 'scroll';
-const CLICK = 'click';
+const ACTIVE = 'active';
 
-// element
+const body = document.querySelector('body');
 const header = document.querySelector('header');
-const conMain = document.querySelector('.ly-contents__main');
-const dim = document.querySelectorAll('.dim');
+const lyWrap = document.querySelector('.ly-wrap');
+const logo = document.querySelector('header .logo');
+const nav = document.querySelector('nav');
+const subGnb = document.querySelectorAll('.gnb__depth');
+const contWrap = document.querySelector('.cont-area .cont__wrap');
+const headerBtn = document.querySelector('.header__btn');
 
-// 헤더 고정
-function headerFixed() {
-  const checkPoint = conMain.getBoundingClientRect().top;
-  const headerH = header.offsetHeight;
+const conWrapCheck = contWrap.parentElement.previousElementSibling;
 
-  if (checkPoint < headerH) {
-    header.classList.add(ON);
+const headerH = header.offsetHeight;
+const navH = nav.offsetHeight;
+
+let checkClass;
+
+// 모바일 슬라이드 메뉴
+function slideMenuHandler() {
+  checkClass = headerBtn.classList.contains(ON);
+  if (checkClass) {
+    headerBtn.classList.remove(ON);
+    nav.style.right = `-100%`;
+    logo.style.zIndex = 1;
+    lyWrap.classList.remove('stop-scroll');
   } else {
-    header.classList.remove(ON);
+    headerBtn.classList.add(ON);
+    nav.style.right = 0;
+    logo.style.zIndex = 999;
+    lyWrap.classList.add('stop-scroll');
   }
 }
 
 // 탭
-function tabEvtHandler() {
-  const tabBtn = document.querySelectorAll('.tab__btn');
-  const tabCon = document.querySelectorAll('.tab__contents');
-  tabBtn.forEach((el, i) => {
-    el.addEventListener(CLICK, () => {
-      for (let z = 0; z < tabBtn.length; z++) {
-        tabBtn[z].parentElement.classList.remove(ON);
-        tabCon[z].classList.remove(ON);
-      }
-      el.parentElement.classList.add(ON);
-      tabCon[i].classList.add(ON);
+function moveTabHandler() {
+  const tabBtn = document.querySelectorAll('.tab__btn .btn');
+  const tabCon = document.querySelectorAll('.tab__cont .cont');
+
+  tabBtn.forEach((el, idx) => {
+    el.addEventListener('click', () => {
+      tabBtn.forEach((e, i) => {
+        e.classList.remove(ON);
+        tabCon[i].classList.remove(ON);
+      });
+      el.classList.add(ON);
+      tabCon[idx].classList.add(ON);
     });
   });
 }
-
-function formSubmitData() {
-  const formSubmit = document.querySelector('.form-submit');
-  const txtArea = document.querySelector('#txtArea');
-
-  if (!formSubmit) {
+// 메뉴 드롭다운
+function navDropDown() {
+  checkClass = nav.classList.contains('mobile');
+  if (checkClass) {
     return;
   }
-  formSubmit.addEventListener(CLICK, () => {
-    $.ajax({
-      type: 'GET',
-      url: 'https://script.google.com/macros/s/AKfycbw0E9u5MWN5eCPElu18pbJTAUDThNPzPG52qsfMQJtBgBeyzlkvMQriOILAr1v6G4m1/exec',
-      data: {
-        메세지: txtArea.value,
-      },
-      success: function (response) {
-        //값 비워주기
-        txtArea.value = '';
-        formOpenPopup();
-      },
-      error: function (request) {
-        console.log('error');
-      },
-    });
-  });
-}
+  let cofH = 0;
+  subGnb.forEach((el, i) => {
+    const subGnbH = el.offsetHeight;
 
-function formOpenPopup() {
-  dim.forEach((el) => {
-    if (el.id === 'pop01') {
-      el.classList.add(ON);
+    if (cofH < subGnbH) {
+      cofH = subGnbH;
+    }
+
+    if (header.offsetHeight === headerH) {
+      header.style.height = `${cofH + headerH}px`;
+      nav.style.height = `${cofH + headerH}px`;
+      header.classList.add(ACTIVE);
+      nav.classList.add(ON);
+    } else {
+      header.style.height = `${headerH}px`;
+      nav.style.height = `${navH}px`;
+      header.classList.remove(ACTIVE);
+      nav.classList.remove(ON);
     }
   });
 }
-function openPopUp(id) {
-  id.classList.add(ON);
-}
 
-function closePopUp(id) {
-  id.classList.remove(ON);
-}
-
-const bindEvt = {
-  scroll: function (el, func) {
-    el.addEventListener(SCROLL, () => {
-      func();
-    });
+const deviceSizeHandler = {
+  type01: () => {
+    nav.classList.add('mobile');
+    nav.style.height = `100vh`;
+    if (conWrapCheck === null) {
+      return;
+    } else {
+      contWrap.classList.remove('cont__wrap--flex');
+    }
   },
-
-  click: function (el, func) {
-    el.addEventListener(CLICK, () => {
-      func();
-    });
+  type02: () => {
+    nav.classList.remove('mobile');
+    nav.style.height = `auto`;
+    if (conWrapCheck === null) {
+      return;
+    } else {
+      contWrap.classList.add('cont__wrap--flex');
+    }
   },
 };
 
-// 이벤트 연결
-function bindEvtHandler(el) {
-  bindEvt.scroll(window, headerFixed);
+// 화면 리사이징
+function slideMenuResize() {
+  const winW = window.innerWidth;
+
+  if (winW <= 1024) {
+    deviceSizeHandler.type01();
+  } else {
+    deviceSizeHandler.type02();
+  }
 }
 
-// init
+// 디바이스 해상도 체크
+function ratioMatch() {
+  const ratio = window.matchMedia('(max-width: 1024px)');
+
+  if (ratio.matches) {
+    deviceSizeHandler.type01();
+  } else {
+    deviceSizeHandler.type02();
+  }
+}
+
+window.addEventListener('resize', slideMenuResize);
+nav.addEventListener('mouseenter', navDropDown);
+nav.addEventListener('mouseleave', navDropDown);
+
+if (headerBtn) {
+  headerBtn.addEventListener('click', slideMenuHandler);
+}
+
 function init() {
-  tabEvtHandler();
-  formSubmitData();
+  ratioMatch();
+  moveTabHandler();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  init();
-});
+window.addEventListener('DOMContentLoaded', init);

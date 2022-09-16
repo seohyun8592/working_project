@@ -1,315 +1,284 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./vender/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.css" />
     <link rel="stylesheet" href="css/ui.css" />
-    <script src="./js/jquery-1.8.0.min.js"></script>
-    <script src="./vender/swiper/swiper-bundle.js"></script>
+    <script src="js/vendor/swiper-bundle.js"></script>
     <script src="js/ui.js" defer></script>
-    <title>Kim Seo Hyun</title>
+    <title>MOG</title>
   </head>
   <body>
     <div class="ly-wrap">
       <header>
-        <div class="ly-header">
-          <h1 class="ly-header__logo">SeoHyun's Web Portfolio</h1>
-          <!-- //logo -->
-
-          <div class="gnb">
-            <ul>
-              <li><a href="#me">ABOUTME</a></li>
-              <li><a href="#skill">SKILLS</a></li>
-              <li><a href="#history">HISTORY</a></li>
-              <li><a href="#portfolio">PORTFOLIO</a></li>
-            </ul>
-          </div>
-          <!-- //gnb -->
+        <h1 class="logo">
+          <a href="./index.html">
+            <img src="./img/mog_logo.jpg" alt="로고" />
+          </a>
+        </h1>
+        <nav>
+          <ul class="gnb">
+            <li>
+              <a href="#none">About</a>
+            </li>
+            <li>
+              <a href="#none">Consulting</a>
+              <ul class="gnb__depth">
+                <li><a href="page/service.html">Services</a></li>
+                <li><a href="#none">Programs</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#none">Admission Posting</a>
+              <ul class="gnb__depth">
+                <li><a href="#none">Top 10 Schools</a></li>
+                <li><a href="#none">Departments</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#none">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__btn">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <!-- //header-wrap -->
+        <!-- nav -->
       </header>
       <!-- //header -->
-
       <main>
-        <div class="ly-contents__wrap">
-          <div class="ly-contents__visual">
-            <div class="txt-area">
-              <h2><span>CREATIVE</span>PUBLISHER</h2>
-              <p>
-                웹의 가치를 만들고 참신하며 새로운 디자인에 대한 지속적인 관심과
-                효율적인 시멘틱 웹페이지 구축을 위하여 늘 준비되어 있는
-                웹퍼블리셔 김서현입니다.
-              </p>
-            </div>
+        <div class="visual-area">
+          <div class="swiper mySwiper">
+            <ul class="swiper-wrapper slide__wrap">
+              <li class="swiper-slide slide__item slide__item--01">
+                <div class="txt-area animate">
+                  <a href="#none" class="visual__title">
+                    <span>
+                      <strong>Lorem ipsum amet,</strong>
+                    </span>
+                    <span>
+                      <strong>placeat!</strong>
+                    </span>
+                    <p class="visual__title-sub">
+                      <span>안녕하세요. 반갑습니다.</span>
+                    </p>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide slide__item slide__item--02">
+                <div class="txt-area">
+                  <a href="#none" class="visual__title">
+                    <span>
+                      <strong>Lorem ipsum amet,</strong>
+                    </span>
+                    <span>
+                      <strong>placeat!</strong>
+                    </span>
+                    <p class="visual__title-sub">
+                      <span>Praesentium magni magnam temporibus</span>
+                    </p>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide slide__item slide__item--03">
+                <div class="txt-area">
+                  <a href="#none" class="visual__title">
+                    <span>
+                      <strong>Lorem ipsum amet,</strong>
+                    </span>
+                    <span>
+                      <strong>placeat!</strong>
+                    </span>
+                    <p class="visual__title-sub">
+                      <span>Praesentium magni magnam temporibus</span>
+                    </p>
+                  </a>
+                </div>
+              </li>
+              <li class="swiper-slide slide__item slide__item--04">
+                <div class="txt-area">
+                  <a href="#none" class="visual__title">
+                    <span>
+                      <strong>Lorem ipsum amet,</strong>
+                    </span>
+                    <span>
+                      <strong>placeat!</strong>
+                    </span>
+                    <p class="visual__title-sub">
+                      <span>Praesentium magni magnam temporibus</span>
+                    </p>
+                  </a>
+                </div>
+              </li>
+            </ul>
           </div>
-          <div class="ly-contents__main">
-            <section class="ly-contents__section" id="me">
-              <div class="contents-area"></div>
-            </section>
-            <!-- //report -->
-
-            <!-- <section class="ly-contents__section" id="skill">
-              <div class="contents-area mySwiper01">
-                <h3 class="title">SKILLS</h3>
-                <div class="skills-area swiper-wrapper">
-                  <div class="skill swiper-slide">
-                    <div class="skill-name" id="html"></div>
-                  </div>
-
-                  <div class="skill swiper-slide">
-                    <div class="skill-name" id="css"></div>
-                  </div>
-
-                  <div class="skill swiper-slide">
-                    <div class="skill-name"></div>
-                  </div>
-
-                  <div class="skill swiper-slide">
-                    <div class="skill-name" id="js"></div>
-                  </div>
-
-                  <div class="skill swiper-slide">
-                    <div class="skill-name" id="jquery"></div>
-                  </div>
-
-                  <div class="skill swiper-slide">
-                    <div class="skill-name" id="ps"></div>
-                  </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- <div class="btn__group">
+            <button type="button" class="swiper"></button>
+            <button type="button" class="btn__slide btn__next"></button>
+          </div> -->
+          <div class="swiper-pagination"></div>
+          <!-- <div class="btn__group">
+            <button type="button" class="btn__slide btn__prev"></button>
+            <button type="button" class="btn__slide btn__next"></button>
+          </div> -->
+          <div class="slide__indicator">
+            <!-- <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span> -->
+          </div>
+        </div>
+        <div class="cont-area">
+          <div class="cont__wrap cont__wrap--flex">
+            <section class="cont__left">
+              <a href="#none">
+                <!-- <div class="text-area">
+                  <h2>Please write title of the image</h2>
+                  <p>이미지에 대한 설명을 추가해주세요.</p>
+                </div> -->
+                <div class="img-area">
+                  <img src="img/main_left.jpg" alt="" />
                 </div>
-              </div>
-            </section> -->
+              </a>
+            </section>
+            <section class="cont__right">
+              <div class="tab-area">
+                <div class="tab__btn">
+                  <span class="btn on">버튼1</span>
+                  <span class="btn">버튼2</span>
+                  <span class="btn">버튼3</span>
+                </div>
+                <div class="tab__cont">
+                  <div class="cont on">
+                    <ul class="list-item">
+                      <li>
+                        <a href="#none"
+                          >여기에 글의 내용이 보입니다. 글의 길이가 길 경우
+                          말줄임 처리가 됩니다. 여기에 글의 내용이 보입니다.
+                          글의 길이가 길 경우 말줄임 처리가 됩니다.</a
+                        >
+                        <span class="list-date">2022.09.01</span>
+                      </li>
 
-            <section class="ly-contents__section" id="portfolio">
-              <div class="contents-area">
-                <div class="tab-area depth01">
-                  <div class="tab-area__btn nav">
-                    <li class="on">
-                      <span class="tab__btn">Web</span>
-                    </li>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.01</span>
+                      </li>
 
-                    <li>
-                      <span class="tab__btn">Design</span>
-                    </li>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.01</span>
+                      </li>
+
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.01</span>
+                      </li>
+                    </ul>
                   </div>
-                  <div class="tab-area__contents">
-                    <div class="tab__contents on">
-                      <div class="tab-area depth02">
-                        <ul class="tab-area__btn">
-                          <li class="swiper-slide on">
-                            <span class="tab__btn">All</span>
-                          </li>
+                  <div class="cont">
+                    <ul class="list-item">
+                      <li>
+                        <a href="#none"
+                          >여기에 글의 내용이 보입니다. 글의 길이가 길 경우
+                          말줄임 처리가 됩니다.</a
+                        >
+                        <span class="list-date">2022.09.02</span>
+                      </li>
 
-                          <li class="swiper-slide">
-                            <span class="tab__btn">반응형</span>
-                          </li>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.02</span>
+                      </li>
 
-                          <li class="swiper-slide">
-                            <span class="tab__btn">PC</span>
-                          </li>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.02</span>
+                      </li>
 
-                          <li class="swiper-slide">
-                            <span class="tab__btn">Mobile</span>
-                          </li>
-                        </ul>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.02</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cont">
+                    <ul class="list-item">
+                      <li>
+                        <a href="#none"
+                          >여기에 글의 내용이 보입니다. 글의 길이가 길 경우
+                          말줄임 처리가 됩니다. 여기에 글의 내용이 보입니다.
+                          글의 길이가 길 경우 말줄임 처리가 됩니다.</a
+                        >
+                        <span class="list-date">2022.09.03</span>
+                      </li>
 
-                        <div class="tab-area__contents">
-                          <div class="tab__contents on">
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/carrot.png" alt="" />
-                              </div>
-                              <h4 class="title">당근을 찾아라!</h4>
-                              <!-- <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.03</span>
+                      </li>
 
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/gaon.png" alt="" />
-                              </div>
-                              <h4 class="title">가온스튜디오</h4>
-                              <!-- <a
-                                  href="works/gaon/gaon.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.03</span>
+                      </li>
 
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/tforu.png" alt="" />
-                              </div>
-                              <h4 class="title">티포유</h4>
-
-                              <!-- <a
-                                  href="works/tforu/tforu.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
-                          </div>
-
-                          <div class="tab__contents">
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/carrot.png" alt="" />
-                              </div>
-                              <h4 class="title">당근을 찾아라!</h4>
-                              <!-- <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
-                          </div>
-
-                          <div class="tab__contents">
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/carrot.png" alt="" />
-                              </div>
-                              <h4 class="title">당근을 찾아라!</h4>
-                              <!-- <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
-
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/gaon.png" alt="" />
-                              </div>
-                              <h4 class="title">가온스튜디오</h4>
-                              <!-- <a
-                                  href="works/gaon/gaon.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
-                          </div>
-
-                          <div class="tab__contents">
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/carrot.png" alt="" />
-                              </div>
-                              <h4 class="title">당근을 찾아라!</h4>
-                              <!-- <a
-                                  href="works/carrot/carrot_game.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
-
-                            <div class="contents">
-                              <div class="img-area">
-                                <img src="images/works/gaon.png" alt="" />
-                              </div>
-                              <h4 class="title">가온스튜디오</h4>
-                              <!-- <a
-                                  href="works/gaon/gaon.html"
-                                  target="_blank"
-                                  class="view__btn"
-                                  >바로가기</a
-                                > -->
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="tab__contents">안녕하세요</div>
+                      <li>
+                        <a href="#none">여기에 글의 내용이 보입니다.</a>
+                        <span class="list-date">2022.09.03</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </section>
-            <!-- //portfolio -->
           </div>
         </div>
       </main>
       <!-- //main -->
-
       <footer>
-        <div class="ly-footer">
-          <div class="msg-area">
-            <textarea name="메세지" id="txtArea"></textarea>
-            <button type="submit" class="form-submit">보내기</button>
-          </div>
-          <div class="contact">
-            <ul>
-              <li>@ 2022 Designed by 김서현</li>
-              <li>HP : +82 10 5048 2517</li>
-              <li>Email : shhs0902@naver.com</li>
-              <li>KAKAO ID : shhs0902</li>
-            </ul>
-            <div class="ly-footer__logo">SeoHyun's Web portfolio</div>
-          </div>
+        <div class="adrs">
+          <span>(06134)서울특별시 강남구 테헤란로1길 19 4층</span>
+          <span>전화번호 : 02.111.1111 </span>
+          <span>이메일 : master@mog.co.kr</span>
         </div>
+        <p class="copy">Copyright © 2022 Master Of GRE. All rights reserved.</p>
       </footer>
+      <!-- //footer -->
     </div>
-
-    <!-- 전송 완료 팝업 -->
-    <div class="dim" id="pop01">
-      <div class="popup__wrap">
-        감사합니다.
-        <button type="button" class="btn__close" onclick="closePopUp(pop01);">
-          닫기
-        </button>
-      </div>
-    </div>
-    <!-- //ly-wrapper -->
-
+    <!-- //ly-wrap -->
     <script>
-      var winW = window.innerWidth;
-      var swiper = undefined;
-      var swiper01 = undefined;
+      var swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          //   // disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        on: {
+          activeIndexChange: function () {
+            const visTxt = document.querySelectorAll('.txt-area');
+            console.log(this.realIndex);
 
-      var initSlide = function () {
-        function pfBreakPointSwiper() {
-          if (winW < 850 && swiper === undefined) {
-            swiper = new Swiper('.mySwiper', {
-              observer: true,
-              observeParents: true,
-              slidesPerView: 'auto',
+            visTxt.forEach((v) => {
+              v.classList.remove('animate');
             });
-          } else if (winW >= 850 && swiper !== undefined) {
-            swiper.destroy();
-            swiper = undefined;
-          }
-        }
-
-        function skillBreakeSwiper() {
-          if (winW < 850 && swiper01 === undefined) {
-            swiper01 = new Swiper('.mySwiper01', {
-              observer: true,
-              observeParents: true,
-              slidesPerView: 'auto',
-            });
-          } else if (winW >= 850 && swiper01 !== undefined) {
-            swiper01.destroy();
-            swiper01 = undefined;
-          }
-        }
-        pfBreakPointSwiper();
-        skillBreakeSwiper();
-      };
-
-      initSlide();
-
-      window.addEventListener('resize', () => {
-        winW = window.innerWidth;
-        initSlide();
+            visTxt[this.activeIndex].classList.add('animate');
+          },
+        },
       });
     </script>
   </body>
