@@ -6,14 +6,16 @@
 @import 'base/font';
 
 // component
+@import 'component/form';
 @import 'component/tab';
+@import 'component/slide';
+@import 'component/button';
+@import 'component/table';
 
 // layout
+@import 'layout/container';
 @import 'layout/header';
 @import 'layout/nav';
 @import 'layout/contents';
-@import 'layout/report';
-@import 'layout/skills';
-@import 'layout/history';
-@import 'layout/portfolio';
 @import 'layout/footer';
+@import 'layout/media';
