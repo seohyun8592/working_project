@@ -6,6 +6,7 @@ const SCROLL = 'scroll';
 const CLICK = 'click';
 
 // element
+const body = document.querySelector('body');
 const header = document.querySelector('header');
 const conMain = document.querySelector('.ly-contents__main');
 const conArea = document.querySelector('.contents-area');
@@ -58,8 +59,7 @@ function tabEvtHandler() {
   });
 }
 
-function onButtonClick(event) {
-  const items = document.querySelectorAll('.sort__contents .contents');
+function onButtonClick(event, z) {
   const key = event.target.dataset.type;
   const arr = [];
 
@@ -67,37 +67,38 @@ function onButtonClick(event) {
     return;
   }
 
-  items.forEach((z) => {
-    const allBtn = document.querySelector('.sort__btn--all');
-    allBtn.addEventListener(CLICK, (event) => {
-      z.classList.add(ON);
-    });
-    z.classList.remove(ON);
+  event.target.classList.add(ON);
 
-    arr.push(z);
-    const filtered = arr.filter((item) => item.dataset.type === key);
+  z.classList.remove(ON);
 
-    filtered.forEach((con) => {
-      console.log(z);
-      con.classList.add(ON);
-    });
+  arr.push(z);
+  const filtered = arr.filter((item) => item.dataset.type === key);
+
+  filtered.forEach((con) => {
+    con.classList.add(ON);
   });
 }
 
-function setEventListener() {
+function setEventListener(z) {
+  const allBtn = document.querySelector('.sort__btn--all');
   const sortBtn = document.querySelectorAll('.sort__btn');
+
   sortBtn.forEach((el) => {
-    el.addEventListener(CLICK, (event) => {
+    allBtn.addEventListener(CLICK, () => {
+      allBtn.classList.add(ON);
+      z.classList.add(ON);
+      el.classList.remove(ON);
+    });
+
+    el.addEventListener(CLICK, () => {
       sortBtn.forEach((e) => {
         e.classList.remove(ON);
+        allBtn.classList.remove(ON);
       });
-      el.classList.add(ON);
-
-      onButtonClick(event);
+      onButtonClick(event, z);
     });
   });
 }
-setEventListener();
 
 function formSubmitData() {
   const formSubmit = document.querySelector('.btn__submit');
@@ -148,14 +149,43 @@ let _img_load = 0;
 let _img_count = 192;
 let idx = 0;
 
+function fadeUp() {
+  const visual = document.querySelector('.ly-contents__visual');
+  const realVisual = document.querySelector('.visual__real');
+
+  let percent = 20;
+  let curIdx = 1;
+
+  setTimeout(() => {
+    const widthTranse = setInterval(() => {
+      let currentWToPer = percent + curIdx;
+      realVisual.style.width = `${currentWToPer}%`;
+      realVisual.style.height = `${currentWToPer}%`;
+
+      curIdx++;
+
+      visual.classList.add(ON);
+
+      if (currentWToPer === 100) {
+        clearInterval(widthTranse);
+        body.classList.remove('stop__scroll');
+      }
+    }, 10);
+  }, 2400);
+}
+// fadeUp();
+
 function seq_init() {
   for (idx = 0; idx <= _img_count; idx++) {
     let _img_tmp = new Image();
     _img_tmp.src = `images/sequence/sky${idx}.jpg`;
     _img_tmp.onload = function () {
       ++_img_load;
-      if (_img_load == _img_count) {
-        rolling();
+
+      if (_img_load === _img_count) {
+        fadeUp();
+
+        // rolling();
       }
     };
     // _img_tmp.onerror = function () {
@@ -193,7 +223,6 @@ function rollingClear(set) {
     clearTimeout(set);
   }
 }
-
 seq_init();
 
 const bindEvt = {
@@ -209,12 +238,23 @@ const bindEvt = {
     });
   },
 };
-
+window.onload = function () {
+  setTimeout(() => {
+    scrollTo(0, 0);
+  }, 1);
+};
 // 이벤트 연결
 function bindEvtHandler() {
   bindEvt.scroll(window, headerFixed);
   bindEvt.scroll(window, skillPerMove);
   bindEvt.scroll(window, rollingClear);
+
+  const items = document.querySelectorAll('.sort__contents .contents');
+
+  items.forEach((z) => {
+    z.classList.add(ON);
+    setEventListener(z);
+  });
 }
 
 // init

@@ -24,6 +24,86 @@
   }
 }
 
+@-webkit-keyframes toLeft {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes toLeft {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes toRight {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes outFrame {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes outFrame {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@-webkit-keyframes fadeUp {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
 html,
 body,
 div,
@@ -588,6 +668,81 @@ button {
   z-index: 9;
 }
 
+.ly-contents__visual .visual__intro-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: 100%;
+      -ms-flex-pack: 100%;
+          justify-content: 100%;
+  background-color: #ffffff;
+  -webkit-animation: outFrame 1s forwards 2s;
+          animation: outFrame 1s forwards 2s;
+}
+
+.ly-contents__visual .visual__intro-wrap .intro__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.ly-contents__visual .visual__intro-wrap .title {
+  position: relative;
+  font-size: 3.25rem;
+  font-weight: 700;
+}
+
+.ly-contents__visual .visual__intro-wrap .title:first-child {
+  right: -100%;
+  opacity: 0;
+  -webkit-animation: toLeft 1s forwards 1s ease-in-out;
+          animation: toLeft 1s forwards 1s ease-in-out;
+}
+
+.ly-contents__visual .visual__intro-wrap .title:nth-child(2) {
+  left: -100%;
+  opacity: 0;
+  -webkit-animation: toRight 1s forwards 1.2s ease-in-out;
+          animation: toRight 1s forwards 1.2s ease-in-out;
+}
+
+.ly-contents__visual .visual__intro-wrap .title:last-child {
+  right: -100%;
+  opacity: 0;
+  -webkit-animation: toLeft 1s forwards 1.4s ease-in-out;
+          animation: toLeft 1s forwards 1.4s ease-in-out;
+}
+
+.ly-contents__visual .visual__real {
+  position: absolute;
+  left: 50%;
+  bottom: -100%;
+  width: 20%;
+  height: 10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-animation: fadeUp 1s forwards 1.4s ease-in-out;
+          animation: fadeUp 1s forwards 1.4s ease-in-out;
+}
+
 .ly-contents__visual .img-area {
   position: absolute;
   top: 0;
@@ -597,14 +752,8 @@ button {
   height: 100%;
 }
 
-.ly-contents__visual::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
+.ly-contents__visual .img-area img {
+  border-radius: 0.625rem;
 }
 
 .ly-contents__visual .txt-area {
@@ -641,7 +790,7 @@ button {
           animation-delay: 0.4s;
 }
 
-.ly-contents__visual .txt-area h2 span {
+.ly-contents__visual .txt-area h2 > span {
   display: inline-block;
   color: #ffffff;
 }
@@ -660,6 +809,18 @@ button {
   opacity: 0;
   -webkit-animation: slideIn 1s forwards ease-in-out;
           animation: slideIn 1s forwards ease-in-out;
+}
+
+.ly-contents__visual.on .intro__title {
+  display: none;
+}
+
+.ly-contents__visual.on .txt-area {
+  opacity: 1;
+}
+
+.ly-contents__visual.on .img-area img {
+  border-radius: 0;
 }
 
 .ly-contents__main {
@@ -690,6 +851,10 @@ button {
 
 .ly-contents__section:first-child .contents-area {
   padding-top: 0;
+}
+
+body.stop__scroll {
+  overflow: hidden;
 }
 
 #info .contents-area {

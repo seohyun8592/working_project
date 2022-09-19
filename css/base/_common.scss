@@ -26,6 +26,46 @@ $subTxtColor: #f3a94f;
   }
 }
 
+@keyframes toLeft {
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes toRight {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes outFrame {
+  0% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
 // func
 // @function rem($pxValue, $context: $browser-context) {
 //   @return #{$pxValue/$context}rem;
