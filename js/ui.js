@@ -259,7 +259,6 @@ function bindEvtHandler() {
 // init
 function init() {
   seq_init();
-
   bindEvtHandler();
   tabEvtHandler();
   formSubmitData();
