@@ -223,7 +223,6 @@ function rollingClear(set) {
     clearTimeout(set);
   }
 }
-seq_init();
 
 const bindEvt = {
   scroll: function (el, func) {
@@ -259,6 +258,8 @@ function bindEvtHandler() {
 
 // init
 function init() {
+  seq_init();
+
   bindEvtHandler();
   tabEvtHandler();
   formSubmitData();
