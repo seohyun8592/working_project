@@ -679,8 +679,8 @@ button {
       -ms-flex-pack: 100%;
           justify-content: 100%;
   background-color: #ffffff;
-  -webkit-animation: outFrame 1s forwards 2s;
-          animation: outFrame 1s forwards 2s;
+  -webkit-animation: outFrame 1s forwards 1.4s;
+          animation: outFrame 1s forwards 1.4s;
 }
 
 .ly-contents__visual .visual__intro-wrap .intro__title {
