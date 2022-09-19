@@ -776,6 +776,7 @@ button {
   margin: 0 auto;
   text-align: center;
   padding: 0 1.875rem;
+  opacity: 0;
   z-index: 10;
 }
 
@@ -1145,6 +1146,21 @@ body.stop__scroll {
     width: 47%;
     margin-right: 3%;
   }
+  .ly-contents__visual .visual__intro-wrap .intro__title {
+    width: 100%;
+  }
+  .ly-contents__visual .visual__intro-wrap .title:first-child {
+    right: -10%;
+  }
+  .ly-contents__visual .visual__intro-wrap .title:nth-child(2) {
+    left: -10%;
+  }
+  .ly-contents__visual .visual__intro-wrap .title:nth-child(2) {
+    right: -10%;
+  }
+  .ly-contents__visual .visual__intro-wrap .title {
+    font-size: 2rem;
+  }
   .ly-wrap .sort__contents .img-area {
     height: 10rem;
   }
@@ -1177,6 +1193,46 @@ body.stop__scroll {
   }
   .msg-area textarea {
     height: 15.3125rem;
+  }
+  @-webkit-keyframes toLeft {
+    0% {
+      right: -10%;
+      opacity: 0;
+    }
+    100% {
+      right: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes toLeft {
+    0% {
+      right: -10%;
+      opacity: 0;
+    }
+    100% {
+      right: 0;
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes toRight {
+    0% {
+      left: -10%;
+      opacity: 0;
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
+  }
+  @keyframes toRight {
+    0% {
+      left: -10%;
+      opacity: 0;
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
   }
 }
 
