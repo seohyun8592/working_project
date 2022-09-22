@@ -11,6 +11,18 @@
         top: 0;
         padding: rem(7) 0;
         background-color: $baseColor;
+        .ly-header__logo {
+          color: $subTxtColor;
+        }
+        .gnb {
+          ul {
+            li {
+              a {
+                color: $baseColor;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -23,7 +35,7 @@
     &__logo {
       height: rem(56);
       line-height: rem(56);
-      color: #f3a950;
+      color: $baseColor;
       font-size: rem(17);
       font-weight: 600;
     }

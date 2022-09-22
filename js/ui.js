@@ -152,6 +152,7 @@ let idx = 0;
 function fadeUp() {
   const visual = document.querySelector('.ly-contents__visual');
   const realVisual = document.querySelector('.visual__real');
+  const visualTxt = document.querySelector('.ly-contents__visual .txt-area');
 
   let percent = 20;
   let curIdx = 1;
@@ -165,6 +166,12 @@ function fadeUp() {
       curIdx++;
 
       visual.classList.add(ON);
+
+      if (visual.classList.contains(ON)) {
+        setTimeout(() => {
+          visualTxt.style.opacity = 1;
+        }, 1000);
+      }
 
       if (currentWToPer === 100) {
         clearInterval(widthTranse);

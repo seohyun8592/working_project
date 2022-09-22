@@ -1,7 +1,8 @@
 $ly: ly;
 $rem-base: 16px;
+$white: #ffffff;
+$black: #000000;
 $baseColor: #348597;
-$subColor: #ffffff;
 $subTxtColor: #f3a94f;
 
 @mixin onFlex($align: center, $justify: center) {
