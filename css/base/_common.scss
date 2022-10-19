@@ -11,7 +11,7 @@ $subTxtColor: #f3a94f;
   justify-content: $justify;
 }
 
-@mixin maxWidth($elW: rem(1200)) {
+@mixin maxWidth($elW: rem(985)) {
   max-width: $elW;
   margin: 0 auto;
 }

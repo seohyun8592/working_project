@@ -26,7 +26,7 @@ function headerFixed() {
 
 // 스킬
 function skillPerMove() {
-  const skillWrap = document.querySelector('.skill-item');
+  const skillWrap = document.querySelector('.skill');
   const skillPer = document.querySelectorAll('.skill__per');
   const skillWrapScrT = skillWrap.getBoundingClientRect().top;
   skillPer.forEach((el) => {
