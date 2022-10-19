@@ -821,7 +821,7 @@ button {
 .ly-contents__main .contents .q-list li::before {
   content: 'Q';
   position: absolute;
-  top: 0.4375rem;
+  top: 0.5rem;
   left: 0.3125rem;
   font-size: 1.125rem;
 }
