@@ -212,7 +212,7 @@
 }
 .swiper-button-prev.swiper-button-white,
 .swiper-button-next.swiper-button-white {
-  --swiper-navigation-color: #ffffff;
+  --swiper-navigation-color: $white;
 }
 .swiper-button-prev.swiper-button-black,
 .swiper-button-next.swiper-button-black {
@@ -375,7 +375,7 @@ button.swiper-pagination-bullet {
   top: 0;
 }
 .swiper-pagination-white {
-  --swiper-pagination-color: #ffffff;
+  --swiper-pagination-color: $white;
 }
 .swiper-pagination-black {
   --swiper-pagination-color: #000000;
