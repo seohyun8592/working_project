@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700');
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+}
+
+body,
+html {
+  width: 100%;
+  background: #efec8e;
+}
+
+body .nav,
+html .nav {
+  width: 100%;
+  height: 100px;
+}
+
+body .nav .nav-list,
+html .nav .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0 auto;
+}
+
+body .nav .nav-list > li,
+html .nav .nav-list > li {
+  width: 20%;
+  margin-left: 20px;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+
+body .nav .nav-list > li:first-child,
+html .nav .nav-list > li:first-child {
+  margin-left: 0;
+}
+
+body .nav .nav-list > li.on,
+html .nav .nav-list > li.on {
+  color: blue;
+}
+
+body .sub-nav,
+html .sub-nav {
+  position: fixed;
+  display: none;
+  width: 100%;
+}
+
+body .sub-nav .sub-nav-list,
+html .sub-nav .sub-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100% - 500px);
+  background-color: gray;
+}
+
+body .sub-nav .sub-nav-list > li,
+html .sub-nav .sub-nav-list > li {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+body .sub-nav .sub-nav-list > li:first-child,
+html .sub-nav .sub-nav-list > li:first-child {
+  margin-left: 0;
+}
+
+body .wrap,
+html .wrap {
+  position: relative;
+}
+
+body .wrap h2,
+html .wrap h2 {
+  margin-bottom: 50px;
+  font-size: 70px;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+}
+
+body .wrap #minions,
+html .wrap #minions {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+body .wrap #minions #stuart .speech-bubble,
+html .wrap #minions #stuart .speech-bubble {
+  position: relative;
+  top: 0;
+  width: 150px;
+  height: 60px;
+  font-size: 40px;
+  line-height: 60px;
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+  color: #ffffff;
+  background: #333333;
+  border-radius: 10px;
+  -webkit-transform: rotate(-20deg) translateX(135px) translateY(30px);
+  transform: rotate(-20deg) translateX(135px) translateY(30px);
+}
+
+body .wrap #minions #stuart .speech-bubble:after,
+html .wrap #minions #stuart .speech-bubble:after {
+  content: '';
+  position: absolute;
+  top: 99%;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #333333;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+body .wrap #minions #stuart .first-child,
+html .wrap #minions #stuart .first-child {
+  position: relative;
+  display: inline-block;
+  margin-left: 150px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-hair,
+html .wrap #minions #stuart .first-child .stuart-hair {
+  position: absolute;
+  top: 6px;
+  left: 26px;
+  width: 90px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-hair .stuart-left-hair,
+html .wrap #minions #stuart .first-child .stuart-hair .stuart-left-hair {
+  position: absolute;
+  top: -6px;
+  left: 16px;
+  width: 49px;
+  height: 20px;
+  background-color: #000000;
+  border-radius: 50%;
+  -webkit-transform: rotate(-29deg);
+  transform: rotate(-21deg);
+}
+
+body
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-hair
+  .stuart-left-hair
+  .left-inner-hair,
+html
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-hair
+  .stuart-left-hair
+  .left-inner-hair {
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 47px;
+  height: 20px;
+  background-color: #efec8e;
+  border-radius: 50%;
+}
+
+body .wrap #minions #stuart .first-child .stuart-hair .stuart-right-hair,
+html .wrap #minions #stuart .first-child .stuart-hair .stuart-right-hair {
+  position: absolute;
+  top: -5px;
+  right: -44px;
+  width: 49px;
+  height: 20px;
+  background-color: #000000;
+  border-radius: 50%;
+  -webkit-transform: rotate(29deg);
+  transform: rotate(24deg);
+}
+
+body
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-hair
+  .stuart-right-hair
+  .right-inner-hair,
+html
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-hair
+  .stuart-right-hair
+  .right-inner-hair {
+  position: absolute;
+  top: 2px;
+  left: 1px;
+  width: 47px;
+  height: 20px;
+  background-color: #efec8e;
+  border-radius: 50%;
+}
+
+body .wrap #minions #stuart .first-child .stuart-body,
+html .wrap #minions #stuart .first-child .stuart-body {
+  position: absolute;
+  width: 200px;
+  height: 285px;
+  background: #ffdb4b;
+  border-radius: 100px 100px 50px 50px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-body::before,
+html .wrap #minions #stuart .first-child .stuart-body::before {
+  content: '';
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  width: 70px;
+  height: 20px;
+  background: #d5b32b;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body .wrap #minions #stuart .first-child .stuart-body::after,
+html .wrap #minions #stuart .first-child .stuart-body::after {
+  content: '';
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 70px;
+  height: 20px;
+  background: #ffdb4b;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body .wrap #minions #stuart .first-child .stuart-glasses,
+html .wrap #minions #stuart .first-child .stuart-glasses {
+  position: absolute;
+  top: 72px;
+  left: -2px;
+  width: 204px;
+  height: 20px;
+  background: #575259;
+  border-radius: 4px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-glasses .stuart-eye,
+html .wrap #minions #stuart .first-child .stuart-glasses .stuart-eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  background: #b0ad9e;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body .wrap #minions #stuart .first-child .stuart-glasses .stuart-eye .inner-eye,
+html
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye:after,
+html
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 50%;
+  background: #ffdb4b;
+  border-radius: 50px 50px 0 0;
+}
+
+body
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye
+  .inner-gray-eye,
+html
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye
+  .inner-gray-eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: #74675e;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye
+  .inner-gray-eye
+  .inner-black-eye,
+html
+  .wrap
+  #minions
+  #stuart
+  .first-child
+  .stuart-glasses
+  .stuart-eye
+  .inner-eye
+  .inner-gray-eye
+  .inner-black-eye {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: #000000;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms,
+html .wrap #minions #stuart .first-child .stuart-arms {
+  position: absolute;
+  top: 170px;
+  left: -25px;
+  width: 250px;
+  height: 100px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .stuart-arms-left,
+html .wrap #minions #stuart .first-child .stuart-arms .stuart-arms-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 150px;
+  background: #ffdb4b;
+  border-radius: 50%;
+  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .stuart-arms-right,
+html .wrap #minions #stuart .first-child .stuart-arms .stuart-arms-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 50px;
+  height: 150px;
+  background: #ffdb4b;
+  border-radius: 50%;
+  -webkit-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .glove,
+html .wrap #minions #stuart .first-child .stuart-arms .glove {
+  position: relative;
+  width: 20;
+  height: 30px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .glove > span,
+html .wrap #minions #stuart .first-child .stuart-arms .glove > span {
+  position: absolute;
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .glove > span.top,
+html .wrap #minions #stuart .first-child .stuart-arms .glove > span.top {
+  bottom: -116px;
+  width: 50px;
+  height: 20px;
+  background: #343237;
+  border-radius: 50%;
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .glove > span.one,
+html .wrap #minions #stuart .first-child .stuart-arms .glove > span.one {
+  top: 137px;
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  background: #343237;
+  border-radius: 50%;
+  -webkit-transform: rotate(25deg);
+  transform: rotate(25deg);
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .glove > span.two,
+html .wrap #minions #stuart .first-child .stuart-arms .glove > span.two {
+  top: 142px;
+  left: 50%;
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  background: #343237;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+body .wrap #minions #stuart .first-child .stuart-arms .glove > span.three,
+html .wrap #minions #stuart .first-child .stuart-arms .glove > span.three {
+  top: 137px;
+  right: 0;
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  background: #343237;
+  border-radius: 50%;
+  -webkit-transform: rotate(-25deg);
+  transform: rotate(-25deg);
+}
+
+body .wrap #minions #stuart .first-child .closet,
+html .wrap #minions #stuart .first-child .closet {
+  position: relative;
+}
+
+body .wrap #minions #stuart .first-child .closet .clset-top,
+html .wrap #minions #stuart .first-child .closet .clset-top {
+  position: absolute;
+  top: 195px;
+  left: 31px;
+  width: 142px;
+  height: 90px;
+  background: #2e85d5;
+}
+
+body .wrap #minions #stuart .first-child .closet .clset-bottom,
+html .wrap #minions #stuart .first-child .closet .clset-bottom {
+  position: absolute;
+  top: 263px;
+  left: 10px;
+  width: 180px;
+  height: 95px;
+  background: #2e85d5;
+  border-radius: 0 0 50px 50px;
+}
+
+body .wrap #minions #stuart .first-child .closet .left-shoulder-line,
+html .wrap #minions #stuart .first-child .closet .left-shoulder-line {
+  position: absolute;
+  top: 162px;
+  left: 7px;
+  width: 20px;
+  height: 57px;
+  background: #2e85d5;
+  border-radius: 7px;
+  -webkit-transform: rotate(-53deg);
+  transform: rotate(-53deg);
+}
+
+body .wrap #minions #stuart .first-child .closet .left-shoulder-line:after,
+html .wrap #minions #stuart .first-child .closet .left-shoulder-line:after {
+  content: '';
+  position: absolute;
+  top: 51px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #2d3238;
+  border-radius: 100%;
+}
+
+body .wrap #minions #stuart .first-child .closet .right-shoulder-line,
+html .wrap #minions #stuart .first-child .closet .right-shoulder-line {
+  position: absolute;
+  top: 162px;
+  left: 176px;
+  width: 20px;
+  height: 57px;
+  background: #2e85d5;
+  border-radius: 7px;
+  -webkit-transform: rotate(53deg);
+  transform: rotate(53deg);
+}
+
+body .wrap #minions #stuart .first-child .closet .right-shoulder-line:after,
+html .wrap #minions #stuart .first-child .closet .right-shoulder-line:after {
+  content: '';
+  position: absolute;
+  top: 51px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #2d3238;
+  border-radius: 100%;
+}
+
+body .wrap #minions #stuart .first-child .closet .front-poket,
+html .wrap #minions #stuart .first-child .closet .front-poket {
+  position: absolute;
+  top: 246px;
+  left: 56px;
+  width: 90px;
+  height: 40px;
+  background: #2e85d5;
+  border-radius: 0 0 50px 50px;
+  -webkit-box-shadow: 0 0 3px 3px rgba(0, 0, 255, 0.2);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 255, 0.2);
+}
+
+body .wrap #minions #stuart .first-child .closet .front-poket:after,
+html .wrap #minions #stuart .first-child .closet .front-poket:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 80px;
+  height: 30px;
+  border: 1px dashed #6dc0ff;
+  border-radius: 0 0 50px 50px;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+body .wrap #minions #stuart .first-child .legs,
+html .wrap #minions #stuart .first-child .legs {
+  position: absolute;
+  top: 357px;
+  left: 81px;
+  width: 90px;
+  height: 16px;
+}
+
+body .wrap #minions #stuart .first-child .legs .left-leg,
+html .wrap #minions #stuart .first-child .legs .left-leg {
+  position: absolute;
+  top: 0;
+  left: -23px;
+  width: 35px;
+  height: 16px;
+  background: #2e85d5;
+}
+
+body .wrap #minions #stuart .first-child .legs .right-leg,
+html .wrap #minions #stuart .first-child .legs .right-leg {
+  position: absolute;
+  top: 0;
+  left: 31px;
+  width: 35px;
+  height: 16px;
+  background: #2e85d5;
+}
+
+body .wrap #minions #stuart .first-child .stuart-shoes,
+html .wrap #minions #stuart .first-child .stuart-shoes {
+  position: absolute;
+  top: 373px;
+  left: 42px;
+  width: 120px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-shoes .left-shoe,
+html .wrap #minions #stuart .first-child .stuart-shoes .left-shoe {
+  position: absolute;
+  left: -9px;
+  width: 60px;
+  height: 32px;
+  background: #232027;
+  border-top-left-radius: 50px;
+}
+
+body .wrap #minions #stuart .first-child .stuart-shoes .right-shoe,
+html .wrap #minions #stuart .first-child .stuart-shoes .right-shoe {
+  position: absolute;
+  left: 70px;
+  width: 60px;
+  height: 32px;
+  background: #232027;
+  border-top-right-radius: 50px;
+}
+/*# sourceMappingURL=default.css.map */

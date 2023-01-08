@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/* font */
+@font-face {
+  font-family: 'notokr';
+  src: url(NotoSansKR-Bold.woff) format('woff');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'notokr';
+  src: url(NotoSansKR-Medium.woff) format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'notokr';
+  src: url(NotoSansKR-Regular.woff) format('woff');
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: 'notokr', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: nomal;
+}
+li {
+  list-style: none;
+}
+input,
+textarea,
+select {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+header,
+section,
+article,
+aside,
+nav,
+footer {
+  display: block;
+}
+a {
+  text-decoration: none;
+  outline: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+input[type*='text'],
+input[type*='number'],
+input[type*='password'] {
+  width: 100%;
+  height: 26px;
+  line-height: 17px;
+  padding: 0 8px;
+  background-color: transparent;
+  color: #222222;
+  border-bottom: 1px solid #fff;
+}
+
+button {
+  height: 26px;
+  color: #fff;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+/* common class */
+.hidden {
+  display: none;
+}
+.btn-area {
+  margin-top: 20px;
+}
+.btn-area button {
+  width: 50px;
+  border-radius: 5px;
+  background-color: teal;
+}
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: block;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  padding: 0 10px;
+  text-align: center;
+  /* background-color: teal; */
+}
+
+.wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 950px;
+  min-height: 480px;
+  background: url('../img/bg_01.png') no-repeat 0 0 / cover;
+  z-index: 10;
+}
+.wrap::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+.contents-wrap {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 180px);
+}
+.contents-wrap .contents-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 760px);
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.contents-top .clock {
+  display: block;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.before-contents {
+  text-align: center;
+}
+.before-contents .write-form {
+  width: 100%;
+}
+
+.desc {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 50px;
+}
+.contents-top .desc {
+  font-size: 24px;
+  margin-top: 10px;
+}
+.contents-btm .desc {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+.write-form .form-area {
+  position: relative;
+}
+
+.write-form .form-area input {
+  width: 300px;
+  color: #fff;
+  transition: border-bottom-color 0.4s ease-in;
+}
+.write-form .form-area input:focus {
+  border-bottom-color: blue;
+}
+
+.contents-btm {
+  margin-top: 50px;
+}
+
+.list-wrap {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+}
+.list-wrap .list-area {
+  overflow: hidden;
+}
+.list-wrap .list-area .list-box {
+  width: 70px;
+  height: 30px;
+  max-height: 200px;
+  border-radius: 15px;
+  /* transition: height 0.4s ease-in; */
+  cursor: pointer;
+}
+.list-wrap .list-area.on .list-box {
+  width: 300px;
+  height: calc(100% - 30px);
+}
+.list-wrap .list-area .list-box a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 29px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  border-radius: 15px;
+  background-color: #000;
+  padding: 0 10px;
+  transition: color 0.4s ease-in;
+}
+.list-wrap .list-area:not(.on) .list-box a:hover {
+  color: pink;
+}
+.list-wrap .list-area.on .list-box a {
+  border-radius: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: left;
+}
+.list-wrap .list-area .list-item {
+  display: none;
+  width: 100%;
+  height: 170px;
+  padding: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.list-wrap .list-area.on .list-item {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.list-wrap .list-area .list-item::-webkit-scrollbar {
+  width: 5px;
+  background-color: #222;
+}
+.list-wrap .list-area .list-item::-webkit-scrollbar-thumb {
+  background-color: #999;
+}
+
+.list-wrap .list-area .list-item li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #fff;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.list-wrap .list-area .list-item li + li {
+  margin-top: 10px;
+}
+.list-wrap .list-area .list-item li span {
+  display: block;
+}
+.list-wrap .list-area .list-item li .btn-area {
+  margin-top: 0;
+}
+.list-wrap .list-area .list-item li .btn-area .del-btn {
+  width: 14px;
+  height: 14px;
+  background: url('../img/list_del.png') no-repeat 0 0 / 100%;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  padding: 15px 0;
+}
+.quote-area > p {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.quote-area .desc {
+  font-size: 17px;
+  margin-bottom: 0;
+}
+.quote-area .sub-desc {
+  font-size: 13px;
+  margin-top: 3px;
+}
