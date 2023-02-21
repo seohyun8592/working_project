@@ -1,0 +1,40 @@
+// var
+$app: app;
+$main-green: #39c6cc;
+$white: #ffffff;
+// class
+.flex {
+  display: flex !important;
+  justify-content: center;
+}
+
+.under-line {
+  border-bottom: 0.2rem solid #000000;
+}
+
+.btn.bg-gray {
+  background-color: #7c8594;
+}
+
+@for $i from 1 through 20 {
+  .pad-t#{$i} {
+    padding-top: $i + rem;
+  }
+}
+
+// mixin
+@mixin clearFix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin bgGreen {
+  background-color: $main-green;
+}
+
+@mixin bgWhite {
+  background-color: $white;
+}

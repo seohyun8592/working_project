@@ -1,0 +1,43 @@
+@charset 'utf-8';
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  src: url('../fonts/Montserrat-Regular.woff') format('woff');
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  src: url('../fonts/Montserrat-Bold.woff') format('woff');
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 800;
+  src: url('../fonts/Montserrat-ExtraBold.woff') format('woff');
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 400;
+  src: url('../fonts/SUIT-Regular.woff2') format('WOFF2');
+  unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 700;
+  src: url('../fonts/SUIT-Bold.woff2') format('WOFF2');
+  unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  font-weight: 800;
+  src: url('../fonts/SUIT-Heavy.woff2') format('WOFF2');
+  unicode-range: U+AC00-D7A3;
+}

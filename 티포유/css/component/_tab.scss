@@ -1,0 +1,86 @@
+.tab- {
+  &area {
+    .title {
+      text-align: center;
+    }
+  }
+  &btn-area {
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5.7rem;
+    border-radius: 1.5rem;
+    margin-top: 5.6rem;
+    transform: translateX(0);
+    background: #f7f8fa;
+    .tab-btn {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #7c8594;
+      text-align: center;
+      line-height: 5.7rem;
+      background: #f7f8fa;
+      border-radius: 0;
+      // padding: 0 1.8%;
+
+      &.on {
+        @include bgGreen;
+        color: #ffffff;
+        border-radius: 1.5rem;
+      }
+      &:first-child {
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+      }
+      &:last-child {
+        border-top-right-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+      &.swiper-slide {
+        flex-shrink: 1;
+      }
+    }
+    &.swiper-wrapper {
+     
+    }
+  }
+
+  &contents-area {
+    padding-top: 5.2rem;
+    .btn-area {
+      position: relative;
+      top: -2.5rem;
+      width: 100%;
+      height: 4.5rem;
+      .btn-regist {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 2.5rem;
+      }
+    }
+    
+  }
+  &cont {
+    position: relative;
+    display: none;
+    // padding: 12.1rem 0;
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .desc {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      margin-top: 1.3rem;
+    }
+    &.on {
+      display: block;
+    }
+  }
+}

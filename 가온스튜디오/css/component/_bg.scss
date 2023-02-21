@@ -1,0 +1,82 @@
+// header bg
+.#{$header} {
+  &logo {
+    background: url('../img/logo_white.png') no-repeat 0 0 / 100% 100%;
+  }
+}
+
+// visual
+.#{$contents} {
+  &-wrap {
+    .visual {
+      &-area {
+        .slide {
+          &01 {
+            background: url('../img/main_visual_01.png') no-repeat 0 0 / cover;
+          }
+
+          &02 {
+            background: url('../img/section01.png') no-repeat 0 0 / cover;
+          }
+
+          &03 {
+            background: url('../img/section02.png') no-repeat 0 0 / cover;
+          }
+        }
+      }
+    }
+    &#about {
+      .visual-area {
+        background: url('../img/sub_img01.png') #030303 no-repeat 0 0 / cover;
+      }
+    }
+    &#art {
+      .caption {
+        .title {
+          // background: url('../img/caption_arrow.png') no-repeat center bottom /
+          //   5.9rem 1.7rem;
+        }
+      }
+    }
+    &#pj-detail {
+      .visual-area {
+        background: url('../img/detail_visual.png') no-repeat 0 0 / cover;
+      }
+    }
+  }
+  &-area {
+    .dest-list {
+      &:after {
+        // background: url('../img/img_guide.png') no-repeat 0 0 / cover;
+      }
+    }
+    .img {
+      &-bg {
+        background: url('../img/sub_img02.png') no-repeat 0 0 / cover;
+      }
+    }
+    input {
+      &[type='checkbox'] {
+        & + label {
+          &::after {
+            background: url('../img/check.png') no-repeat 0 0 / 100% 100%;
+          }
+        }
+        &:checked {
+          & + label {
+            &::after {
+              background: url('../img/check_on.png') no-repeat 0 0 / 100% 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+.#{$footer} {
+  &contents {
+    background: url('../img/footer.png') no-repeat 0 0 / cover;
+  }
+}

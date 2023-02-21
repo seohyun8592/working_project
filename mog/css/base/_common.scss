@@ -1,0 +1,39 @@
+// 1-1. Color
+$white: #ffffff;
+$black: #000000;
+$mainColor: #273f5c; //메인 컬러
+$subColor: #e75935;
+$txtGray: #777777;
+$border: #cecece;
+
+// 1-2 Attr
+$rem-base: 16px; //기본 폰트 사이즈
+$headerHeight: 70px; //헤더 높이
+
+// 2. Mixin
+// flex
+@mixin onFlex($align: center, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// 메인 기본 여백
+@mixin basePad() {
+  padding: 0 rem(40);
+}
+
+// background
+@mixin background($imgName) {
+  background: url('../img/main/#{$imgName}.JPG') no-repeat 0 center / 100%;
+}
+
+// 3. Func
+// px 단위 rem 자동 변환
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($num) {
+  @return #{(strip-unit($num) / strip-unit($rem-base))}rem;
+}

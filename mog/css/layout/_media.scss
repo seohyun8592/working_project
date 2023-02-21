@@ -1,0 +1,129 @@
+@media (max-width: 1024px) {
+  header .header__btn {
+    display: block;
+  }
+
+  .cont__wrap .cont__left {
+    width: 100%;
+  }
+  .cont__wrap .cont__left a {
+    justify-content: center;
+  }
+  .cont__wrap .cont__left a .img-area {
+    width: rem(320);
+  }
+  .cont__wrap .cont__right {
+    width: 100%;
+    padding-left: 0;
+    margin-top: rem(30);
+  }
+}
+@media (max-width: 890px) {
+  header {
+    position: relative;
+    padding: rem(10) rem(15);
+  }
+
+  .ly-wrap main {
+    padding-top: 0;
+  }
+
+  .visual-area {
+    height: rem(270);
+  }
+  .visual-area .txt-area .visual__title span {
+    font-size: rem(24);
+  }
+  .visual-area .txt-area .visual__title-sub {
+    margin-top: rem(20);
+  }
+  .visual-area .txt-area .visual__title-sub span {
+    font-size: rem(12);
+  }
+  .visual-area + .cont-area {
+    height: calc(100% - 17.8125rem);
+  }
+  .visual-area + .cont-area .cont__wrap .cont__left .img-area {
+    text-align: center;
+  }
+
+  .tab-area .tab__btn .btn {
+    width: 100%;
+    height: rem(35);
+    line-height: rem(35);
+    font-size: rem(14);
+  }
+  footer {
+    padding: rem(15);
+  }
+
+  .cont__wrap {
+    padding: rem(50) rem(5) rem(70);
+  }
+  .cont__table {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .cont__table-list h3 {
+    font-size: rem(16);
+    padding-left: rem(5);
+  }
+  .cont__table-list h3 span {
+    display: block;
+    margin-left: 0;
+    margin-top: rem(2);
+  }
+  .cont__table .title {
+    font-size: rem(20);
+    margin-top: 0;
+    padding-left: rem(5);
+  }
+  .cont__table-list .list-item li {
+    font-size: rem(14);
+  }
+  .cont__table-list .list-item li + li {
+    margin-top: rem(5);
+  }
+  .cont__table-list + .table-area {
+    margin-top: rem(20);
+  }
+  table thead tr th span {
+    display: block;
+    margin-top: rem(5);
+  }
+  table th,
+  table td {
+    padding-left: rem(4);
+    padding-right: rem(4);
+  }
+
+  table tbody tr th {
+    font-size: rem(12);
+  }
+  table tbody tr td {
+    font-size: rem(11);
+  }
+
+  .swiper-pagination span {
+    width: rem(10);
+    height: rem(10);
+  }
+  .swiper-pagination span + span {
+    margin-left: rem(10);
+  }
+
+  footer {
+    display: block;
+  }
+  footer .adrs span {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  footer .adrs span + span {
+    margin-top: rem(7);
+  }
+  footer .adrs span + span::before {
+    content: none;
+  }
+}

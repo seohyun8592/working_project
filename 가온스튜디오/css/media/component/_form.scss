@@ -1,0 +1,119 @@
+@media (max-width: 1159px) {
+  input {
+    &[type='checkbox'] {
+      & + label {
+        &::after {
+        }
+      }
+      &:checked {
+        & + label {
+        }
+      }
+    }
+    &[type='text'] {
+    }
+    &[type='file'] {
+    }
+  }
+  textarea {
+  }
+
+  .form- {
+    &area {
+      &__row {
+      }
+      &__title {
+      }
+      &__select-area {
+      }
+      &__check {
+      }
+      &__group {
+        display: block;
+        &--contents {
+          & + .form-area__group--contents {
+            margin-top: 3rem;
+            margin-left: 0;
+          }
+        }
+      }
+      &__fill-area {
+      }
+      &__writing {
+        & + .form-area__writing {
+        }
+      }
+      .upload-name {
+        & + label {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  input {
+    &[type='checkbox'] {
+      & + label {
+        &::after {
+        }
+      }
+      &:checked {
+        & + label {
+        }
+      }
+    }
+    &[type='text'] {
+    }
+    &[type='file'] {
+    }
+  }
+  textarea {
+  }
+
+  .form- {
+    &area {
+      &__row {
+      }
+      &__title {
+      }
+      &__select-area {
+      }
+      &__check {
+      }
+      &__group {
+        display: block;
+        &--contents {
+          & + .form-area__group--contents {
+            margin-top: 3rem;
+            margin-left: 0;
+          }
+        }
+      }
+      &__fill-area {
+      }
+      &__writing {
+        & + .form-area__writing {
+        }
+      }
+      .upload-name {
+        & + label {
+        }
+      }
+    }
+    &footer {
+      display: block;
+      margin-top: 0;
+      &__left {
+        @include onFlex(center, flex-start);
+      }
+    }
+    &submit {
+      padding: 2rem 0 5rem;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

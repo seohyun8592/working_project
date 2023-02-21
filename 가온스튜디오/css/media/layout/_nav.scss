@@ -1,0 +1,73 @@
+@media (max-width: 1159px) {
+  .#{$nav} {
+    &__list-item {
+      li {
+        a {
+          padding: 1rem 0;
+        }
+        &.on {
+          a {
+          }
+        }
+        &:hover {
+          a {
+          }
+        }
+      }
+      &--contact {
+        li {
+          .title {
+          }
+          .desc {
+          }
+          & + li {
+            margin-top: 2rem;
+          }
+        }
+      }
+      & + .nav__list-item {
+        margin-top: 8rem;
+        margin-bottom: 5rem;
+      }
+    }
+    &.on {
+    }
+  }
+}
+@media (max-width: 799px) {
+  .#{$nav} {
+    width: 100%;
+    &__list-item {
+      li {
+        a {
+          padding: 1rem 0;
+        }
+        &.on {
+          a {
+          }
+        }
+        &:hover {
+          a {
+          }
+        }
+      }
+      &--contact {
+        li {
+          .title {
+          }
+          .desc {
+          }
+          & + li {
+            margin-top: 2rem;
+          }
+        }
+      }
+      & + .nav__list-item {
+        margin-top: 8rem;
+        margin-bottom: 5rem;
+      }
+    }
+    &.on {
+    }
+  }
+}

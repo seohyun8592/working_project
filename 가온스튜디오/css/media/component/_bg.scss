@@ -1,0 +1,61 @@
+// header bg
+.#{$header} {
+  &logo {
+  }
+}
+
+// visual
+.#{$contents} {
+  &-wrap {
+    .visual {
+      &-area {
+        .slide {
+          &01 {
+          }
+
+          &02 {
+          }
+
+          &03 {
+          }
+        }
+        &__inner {
+          &.about {
+          }
+        }
+      }
+    }
+    &#about {
+      .visual-area__inner {
+      }
+    }
+  }
+  &-area {
+    .dest-list {
+      &:after {
+      }
+    }
+    .img-area {
+    }
+    input {
+      &[type='checkbox'] {
+        & + label {
+          &::after {
+          }
+        }
+        &:checked {
+          & + label {
+            &::after {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+.#{$footer} {
+  &contents {
+  }
+}

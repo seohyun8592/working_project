@@ -1,0 +1,105 @@
+.slide {
+  &__wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &.move {
+      transition: left 0.4s ease-in-out;
+    }
+  }
+  &__item {
+    &--01 {
+      @include background(slide_01);
+    }
+    &--02 {
+      @include background(slide_02);
+    }
+    &--03 {
+      @include background(slide_03);
+    }
+    &--04 {
+      @include background(slide_04);
+    }
+    &--05 {
+      @include background(slide_05);
+    }
+    &--06 {
+      @include background(slide_06);
+    }
+  }
+  &__indicator {
+    position: absolute;
+    left: 0;
+    bottom: rem(20);
+    @include onFlex(center, center);
+    width: 100%;
+    span {
+      display: inline-block;
+      width: rem(12);
+      height: rem(12);
+      background-color: $white;
+      border-radius: 100%;
+      cursor: pointer;
+      & + span {
+        margin-left: rem(12);
+      }
+      &.active {
+        background-color: $mainColor;
+      }
+    }
+  }
+}
+.swiper-pagination {
+  left: 50%;
+  bottom: rem(12);
+  transform: translateX(-50%);
+  z-index: 9;
+  span {
+    width: rem(12);
+    height: rem(12);
+    background-color: $white;
+    cursor: pointer;
+    &.swiper-pagination-bullet {
+      opacity: 1;
+    }
+    &.swiper-pagination-bullet-active {
+      background-color: $mainColor;
+    }
+    & + span {
+      margin-left: rem(12);
+    }
+  }
+}
+.swiper-button-next {
+  right: 0;
+  width: rem(30);
+  height: rem(30);
+  background: url('../img/slide_right_off.png') no-repeat 0 0 / contain;
+  transition: background-image 0.4s ease-in;
+  &:after {
+    content: none;
+  }
+  &:hover {
+    background-image: url('../img/slide_right.png');
+  }
+}
+
+.swiper-button-prev {
+  width: rem(30);
+  height: rem(30);
+  background: url('../img/slide_left_off.png') no-repeat 0 0 / contain;
+  transition: background-image 0.4s ease-in;
+  &:after {
+    content: none;
+  }
+  &:hover {
+    background-image: url('../img/slide_left.png');
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 9;
+}

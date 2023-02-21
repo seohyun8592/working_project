@@ -1,0 +1,47 @@
+.tab-area {
+  .tab {
+    &__btn {
+      @include onFlex(center, flex-start);
+      border-bottom: rem(1) solid $mainColor;
+      .btn {
+        position: relative;
+        width: rem(100);
+        height: rem(30);
+        text-align: center;
+        line-height: rem(29);
+        color: #aaaaaa;
+        background-color: #f0f0f0;
+        transition: background-color 0.2s ease-in;
+        z-index: 1;
+        cursor: pointer;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          visibility: visible;
+          width: 0;
+          height: 100%;
+          transition: width 0.4s ease-in;
+          z-index: -1;
+        }
+        &.on {
+          color: $white;
+          background-color: $mainColor;
+        }
+        & + .btn {
+          margin-left: rem(2);
+        }
+      }
+    }
+    &__cont {
+      .cont {
+        display: none;
+        &.on {
+          display: block;
+        }
+      }
+    }
+  }
+}

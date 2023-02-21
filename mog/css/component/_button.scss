@@ -1,0 +1,27 @@
+.btn {
+  &__slide {
+    position: absolute;
+    top: 50%;
+    width: rem(30);
+    height: rem(30);
+    font-size: rem(18);
+    font-weight: 700;
+    color: $white;
+    transform: translateY(-50%);
+    transition: background-image 0.4s ease-in;
+  }
+  &__prev {
+    left: 3%;
+    background: url('../img/slide_left_off.png') no-repeat 0 0 / contain;
+    &:hover {
+      background-image: url('../img/slide_left.png');
+    }
+  }
+  &__next {
+    right: 3%;
+    background: url('../img/slide_right_off.png') no-repeat 0 0 / contain;
+    &:hover {
+      background-image: url('../img/slide_right.png');
+    }
+  }
+}

@@ -1,0 +1,43 @@
+#{$orgFooter} {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: 58.4rem;
+  .#{$footer} {
+    &contents {
+      @include onFlex(center, center);
+      flex-wrap: wrap;
+      align-content: center;
+      height: 100%;
+      .instagram {
+        position: relative;
+        @include onFlex(center, center);
+        width: 11rem;
+        height: 11rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $mainColor;
+        text-align: center;
+        border: 0.1rem solid $mainColor;
+        border-radius: 100%;
+        margin-top: 4.2rem;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 1.5rem;
+          left: 50%;
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 100%;
+          background-color: $mainColor;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &title {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
